@@ -8,10 +8,12 @@ public class Health : MonoBehaviour {
     public float cachedY;
     public float minXValue;
     public float maxXValue;
-    private int currentHealth;
+    public int currentHealth;
     public int maxHealth;
     public Text healthtext;
     public Image visualHealth;
+    float heartcount;
+    GameObject heart;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +31,23 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        heart = GameObject.Find("Heartbeat");
+
+        
+        if ((currentHealth <= (float)maxHealth / 2) && !heart.GetComponent<AudioSource>().isPlaying) {
+            Debug.Log("Print");
+            heart.GetComponent<AudioSource>().Play();
+            heartcount = (float)currentHealth / ((float)maxHealth / 2); // percent of last 50% health
+            Debug.Log(heartcount);
+            heart.GetComponent<AudioSource>().volume =  1.0f - heartcount;
+        }
+        else if ((currentHealth <= (float)maxHealth / 2) && heart.GetComponent<AudioSource>().isPlaying) {
+            heartcount = (float)currentHealth / ((float)maxHealth / 2); // percent of last 50% health
+            Debug.Log(heartcount);
+            heart.GetComponent<AudioSource>().volume = 1.0f - heartcount;
+        }
+
+       
         healthBar();
     }
 
@@ -68,5 +87,10 @@ public class Health : MonoBehaviour {
     public void changeHealth(int change) {
         this.gameObject.GetComponent<Animator>().SetTrigger("hit");
         currentHealth += change;
+        if (heart.GetComponent<AudioSource>().isPlaying) {
+            if (currentHealth > (maxHealth / 2)) {
+                heart.GetComponent<AudioSource>().Stop();
+            }
+        }
     }
 }
