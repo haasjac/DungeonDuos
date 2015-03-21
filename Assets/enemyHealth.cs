@@ -61,7 +61,7 @@ public class enemyHealth : MonoBehaviour {
 
     public void changeHealth(int change)
     {
-        //this.gameObject.GetComponent<Animator>().SetTrigger("hit");
+        GameObject.Find("Shout" + Random.Range(1, 4)).GetComponent<AudioSource>().Play();
         currentHealth += change;
     }
 }
