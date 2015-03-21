@@ -1138,6 +1138,7 @@ MonoBehaviour:
   cachedY: 0
   minXValue: 0
   maxXValue: 0
+  currentHealth: 0
   maxHealth: 100
   healthtext: {fileID: 1205288290}
   visualHealth: {fileID: 1835972249}
@@ -1247,6 +1248,7 @@ MonoBehaviour:
   cachedY: 0
   minXValue: 0
   maxXValue: 0
+  currentHealth: 0
   maxHealth: 100
   healthtext: {fileID: 1901657814}
   visualHealth: {fileID: 622321269}
@@ -2362,6 +2364,18 @@ Prefab:
     - target: {fileID: 409958, guid: f0ba43775f377124eb08035c73731521, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 490016, guid: f0ba43775f377124eb08035c73731521, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 35.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 490016, guid: f0ba43775f377124eb08035c73731521, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -36.2000008
+      objectReference: {fileID: 0}
+    - target: {fileID: 490016, guid: f0ba43775f377124eb08035c73731521, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0ba43775f377124eb08035c73731521, type: 2}
