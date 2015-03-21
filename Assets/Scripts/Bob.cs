@@ -17,6 +17,9 @@ public class Bob : MonoBehaviour {
 	Vector3 tempjump = new Vector3(0,0,0);
 	public GameObject Steve;
 	bool has_key = false;
+	public bool swap = false;
+	Vector3 bobpos;
+	Vector3 stevepos;
 
 
 	// Use this for initialization
@@ -38,8 +41,16 @@ public class Bob : MonoBehaviour {
 				transform.position = pos;
 			}
 
-		} else {
+		} else if (!Steve.GetComponent<Steve>().lantern && !swap){
 			GetComponent<Rigidbody>().velocity =(new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)))* run_speed) + ramp_vec;
+		}
+
+		if (!jumping) {
+			if (transform.position.y != -2.4f) {
+				Vector3 temp = transform.position;
+				temp.y = -2.4f;
+				transform.position = temp;
+			}
 		}
 
 		if (Input.GetButtonDown (B_button) && !jumping && (Input.GetAxis(Horizontal) != 0 || Input.GetAxis(Vertical) != 0)) {
@@ -50,10 +61,22 @@ public class Bob : MonoBehaviour {
 			Vector3 pos = transform.position + new Vector3 (0, 2, 0);
 			transform.position = pos;
 		}
-		if (Input.GetButtonDown (X_button)&& !jumping) {
-			Vector3 temppos = transform.position;
-			transform.position = Steve.transform.position;
-			Steve.transform.position = temppos;
+		if (Input.GetButtonDown (X_button)&& !jumping && !Steve.GetComponent<Steve>().lantern) {
+			swap = true;
+			bobpos = transform.position;
+			stevepos = Steve.transform.position;
+			//Vector3 temppos = transform.position;
+			//transform.position = Steve.transform.position;
+			//Steve.transform.position = temppos;
+
+		}
+		if (swap) {
+			float step = run_speed * 5 * Time.deltaTime;
+			transform.position = Vector3.MoveTowards(transform.position, stevepos, step);
+			Steve.transform.position = Vector3.MoveTowards(Steve.transform.position, bobpos, step);
+			if (transform.position == stevepos && Steve.transform.position == bobpos) {
+				swap = false;
+			}
 		}
 
 	}

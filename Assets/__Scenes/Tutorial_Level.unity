@@ -440,6 +440,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5439124, guid: abeb5a7fd97913243823b391d52914d3, type: 2}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11412860, guid: abeb5a7fd97913243823b391d52914d3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: abeb5a7fd97913243823b391d52914d3, type: 2}
@@ -4101,7 +4105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &2089979632
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4272,6 +4276,10 @@ Prefab:
     - target: {fileID: 452390, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
       propertyPath: m_LocalScale.y
       value: 23.9899998
+      objectReference: {fileID: 0}
+    - target: {fileID: 106218, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
