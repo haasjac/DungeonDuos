@@ -13,9 +13,10 @@ GameObject:
   - 23: {fileID: 2372584}
   - 114: {fileID: 11463442}
   - 54: {fileID: 5428698}
+  - 114: {fileID: 11401460}
   m_Layer: 8
   m_Name: Bob
-  m_TagString: Player
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,8 +27,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138388}
-  m_LocalRotation: {x: .155561224, y: -.455860913, z: -.868624747, w: -.116115056}
-  m_LocalPosition: {x: 7.54716158, y: .951282382, z: 3.97161961}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -.349999994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +43,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ac2df1b879017f64aa5a44fdede53e5b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -90,13 +91,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11463442
+--- !u!114 &11401460
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138388}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dcb75a83e3523e45ba69ce1c42502e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Horizontal: L_XAxis_2
+  Vertical: L_YAxis_2
+  B_button: B_2
+  X_button: X_2
+  leap_force: 15
+  run_speed: 15
+  jump_time: .5
+  jumping: 0
+  Steve: {fileID: 0}
+--- !u!114 &11463442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138388}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bb6b7e78a6e16449bcd2468f9176873, type: 3}
   m_Name: 
