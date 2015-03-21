@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.42000008, y: .5, z: -4.48999977}
+  m_LocalPosition: {x: 88.4109344, y: -2.4787066, z: 61.6218834}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,6 +108,7 @@ MonoBehaviour:
   damage: 40
   player1: {fileID: 0}
   player2: {fileID: 0}
+  hit: 0
   takedamage: {fileID: 0}
 --- !u!195 &19562668
 NavMeshAgent:
@@ -117,7 +118,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 118528}
   m_Enabled: 1
   m_Radius: .5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
