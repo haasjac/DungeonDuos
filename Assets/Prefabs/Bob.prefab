@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11401460}
   m_Layer: 8
   m_Name: Bob
-  m_TagString: Player
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
