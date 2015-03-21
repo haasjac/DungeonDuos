@@ -8,11 +8,11 @@ using System.Collections;
 
 public class Movement : MonoBehaviour {
 
-	public string Horizontal = "Horizontal1";
-	public string Vertical = "Vertical1";
+	public string Horizontal = "L_XAxis_1";
+	public string Vertical = "L_YAxis_1";
 
 	// How fast the camera moves
-	public int cameraVelocity = 10;
+	public float cameraVelocity = 0.1f;
 
 	
 	// Use this for initialization
@@ -34,8 +34,8 @@ public class Movement : MonoBehaviour {
 		// Left
 		//if(Input.GetAxis(Horizontal) < 0)
 		//{
-		if (Mathf.Abs(Input.GetAxis(Horizontal)) > .75)
-			transform.Translate((new Vector3 (1, 0, -1)* cameraVelocity * Input.GetAxis(Horizontal)) * Time.deltaTime);
+		//if (Mathf.Abs(Input.GetAxis(Horizontal)) > .75)
+		GetComponent<Rigidbody>().velocity =(new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)))* cameraVelocity);
 		//rigidbody.AddForce(Vector3.right);
 		//}
 		// Right
@@ -47,8 +47,8 @@ public class Movement : MonoBehaviour {
 		//if(Input.GetAxis(Vertical) > 0)
 		//{
 		//Debug.Log (Mathf.Abs (Input.GetAxis (Vertical)));
-		if (Mathf.Abs(Input.GetAxis(Vertical)) > .75)
-			transform.Translate((new Vector3 (-1, 0, -1) * cameraVelocity* Input.GetAxis(Vertical)) * Time.deltaTime);
+		//if (Mathf.Abs(Input.GetAxis(Vertical)) > .75)
+		//GetComponent<Rigidbody>().velocity((new Vector3 (-1, 0, -1) * cameraVelocity* Input.GetAxis(Vertical)));
 		//}
 		// Down
 		//if(Input.GetAxis(Vertical) < 0)
