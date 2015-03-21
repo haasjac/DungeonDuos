@@ -13,6 +13,8 @@ GameObject:
   - 23: {fileID: 2374442}
   - 114: {fileID: 11412860}
   - 54: {fileID: 5439124}
+  - 114: {fileID: 11417700}
+  - 114: {fileID: 11476260}
   m_Layer: 0
   m_Name: Steve
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.90940714, y: .600000024, z: 4.05308676}
+  m_LocalPosition: {x: 0, y: 1, z: 4.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +44,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d5e19e6f1f443bf4a9d0b62e88624379, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -96,14 +98,47 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106880}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bb6b7e78a6e16449bcd2468f9176873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Horizontal: Horizontal1
-  Vertical: Vertical1
-  cameraVelocity: 10
+  Horizontal: L_XAxis_1
+  Vertical: L_YAxis_1
+  cameraVelocity: 15
+--- !u!114 &11417700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106880}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b611fbad8aca044bc6bbc0d60bcd57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Horizontal: L_XAxis_1
+  Vertical: L_YAxis_1
+  B_button: B_1
+  run_speed: 15
+  run_time: 1
+  power_up_speed: 30
+--- !u!114 &11476260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dcb75a83e3523e45ba69ce1c42502e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Horizontal: L_XAxis_1
+  Vertical: L_YAxis_1
+  B_button: B_1
+  leap_force: 1
+  run_speed: 15
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
