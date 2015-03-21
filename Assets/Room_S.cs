@@ -15,6 +15,7 @@ public class Room_S : MonoBehaviour {
 	void OnTriggerEnter (Collider other)
 	{
 		if (other.tag == "Player1") {
+			GameObject.Find("Transition").GetComponent<AudioSource>().Play();
 			Wall1.GetComponent<Renderer> ().material = Trans; 
 			Wall2.GetComponent<Renderer> ().material = Trans; 
 			Torch1.GetComponentInChildren<ParticleSystem>().Play();

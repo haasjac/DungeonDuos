@@ -11,7 +11,6 @@ GameObject:
   - 33: {fileID: 3368994}
   - 65: {fileID: 6566730}
   - 23: {fileID: 2353928}
-  - 114: {fileID: 11428458}
   m_Layer: 0
   m_Name: Hurdle
   m_TagString: Respawn
@@ -25,9 +24,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124840}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.5200005, y: .670000017, z: .639999986}
-  m_LocalScale: {x: 8.39999962, y: .800000012, z: 1}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
+  m_LocalPosition: {x: 30.6000004, y: -2.5999999, z: 48.4000015}
+  m_LocalScale: {x: 19.7999992, y: .800000012, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,19 +73,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11428458
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124840}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7344dec84e04e04f9ea77622c4588f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  push: {x: 0, y: 0, z: -1}
-  push_force: 20
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

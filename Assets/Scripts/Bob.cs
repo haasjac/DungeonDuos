@@ -72,6 +72,14 @@ public class Bob : MonoBehaviour {
 		
 	}
 
+	void OnCollisionEnter(Collision collision) {
+		if (collision.gameObject.tag == "locked_door" && has_key) {
+			has_key = false;
+			Destroy(collision.gameObject);
+		}
+		
+	}
+
 	void OnTriggerExit(Collider collision) {
 		//Debug.Log ("hit");
 		if (collision.gameObject.tag == "Ramp") {
