@@ -30,11 +30,11 @@ public class Steve : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (transform.position.y != -2.4f) {
+		/*if (transform.position.y != -2.4f) {
 			Vector3 temp = transform.position;
 			temp.y = -2.4f;
 			transform.position = temp;
-		}
+		}*/
 		if (!lantern && !Bob.GetComponent<Bob>().swap) {
 			GetComponent<Rigidbody> ().velocity = (new Vector3 (Input.GetAxis (Horizontal) - Input.GetAxis (Vertical), 0, -(Input.GetAxis (Horizontal) + Input.GetAxis (Vertical))) * run_speed) + ramp_vec;
 		} else if (lantern) {
