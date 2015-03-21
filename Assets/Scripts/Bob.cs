@@ -16,6 +16,7 @@ public class Bob : MonoBehaviour {
 	float jump_clock = 0;
 	Vector3 tempjump = new Vector3(0,0,0);
 	public GameObject Steve;
+	bool has_key = false;
 
 
 	// Use this for initialization
@@ -41,7 +42,7 @@ public class Bob : MonoBehaviour {
 			GetComponent<Rigidbody>().velocity =(new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)))* run_speed) + ramp_vec;
 		}
 
-		if (Input.GetButtonDown (B_button) && !jumping && (Input.GetAxis(Horizontal) != 0 | Input.GetAxis(Vertical) != 0)) {
+		if (Input.GetButtonDown (B_button) && !jumping && (Input.GetAxis(Horizontal) != 0 || Input.GetAxis(Vertical) != 0)) {
 			tempjump = new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)));
 			tempjump.Normalize();
 			jumping = true;
@@ -59,18 +60,21 @@ public class Bob : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collision) {
 		//Debug.Log ("hit");
-		if (collision.gameObject.tag == "Respawn") {
+		if (collision.gameObject.tag == "Ramp") {
 			//Debug.Log ("hit player");
 			//ramp_object = collision.gameObject;
 			ramp_vec = collision.GetComponent<Push_block>().push * collision.GetComponent<Push_block>().push_force;
 			//ramp = true;
+		}
+		if (collision.gameObject.tag == "Key") {
+			has_key = true;
 		}
 		
 	}
 
 	void OnTriggerExit(Collider collision) {
 		//Debug.Log ("hit");
-		if (collision.gameObject.tag == "Respawn") {
+		if (collision.gameObject.tag == "Ramp") {
 			//Debug.Log ("hit player");
 			ramp_vec = new Vector3 (0, 0, 0);
 			//ramp = false;

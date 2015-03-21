@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - Player1
   - Player2
+  - Goal
+  - Ramp
+  - Key
+  - locked_door
   layers:
   - Default
   - TransparentFX

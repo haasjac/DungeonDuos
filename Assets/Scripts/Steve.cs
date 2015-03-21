@@ -12,6 +12,7 @@ public class Steve : MonoBehaviour {
 	Vector3 ramp_vec = new Vector3 (0, 0, 0);
 	public float power_up_speed = 10f;
 	public GameObject Bob;
+	bool has_key = false;
 
 	bool running = false;
 	float run_clock = 0;
@@ -42,18 +43,31 @@ public class Steve : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collision) {
 		//Debug.Log ("hit");
-		if (collision.gameObject.tag == "Respawn") {
+		if (collision.gameObject.tag == "Ramp") {
 			//Debug.Log ("hit player");
 			//ramp_object = collision.gameObject;
 			ramp_vec = collision.GetComponent<Push_block>().push * collision.GetComponent<Push_block>().push_force;
 			//ramp = true;
 		}
+		if (collision.gameObject.tag == "Key") {
+			has_key = true;
+			Destroy(collision.gameObject);
+		}
 		
 	}
+
+	void OnCollisionEnter(Collision collision) {
+		if (collision.gameObject.tag == "locked_door" && has_key) {
+			has_key = false;
+			Destroy(collision.gameObject);
+		}
+		
+	}
+
 	
 	void OnTriggerExit(Collider collision) {
 		//Debug.Log ("hit");
-		if (collision.gameObject.tag == "Respawn") {
+		if (collision.gameObject.tag == "Ramp") {
 			//Debug.Log ("hit player");
 			ramp_vec = new Vector3 (0, 0, 0);
 			//ramp = false;

@@ -9,14 +9,14 @@ public class Room_S : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
-		if (other.tag == "Player") {
+		if (other.tag == "Player1") {
 			Wall1.GetComponent<Renderer> ().material = Trans; 
 			Wall2.GetComponent<Renderer> ().material = Trans; 
 		}   
 	}
 	void OnTriggerExit (Collider other)
 	{
-		if (other.tag == "Player") {
+		if (other.tag == "Player1") {
 			Wall1.GetComponent<Renderer> ().material = Opaque; 
 			Wall2.GetComponent<Renderer> ().material = Opaque; 
 		}
