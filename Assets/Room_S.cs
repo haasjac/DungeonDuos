@@ -2,20 +2,19 @@
 using System.Collections;
 
 public class Room_S : MonoBehaviour {
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public GameObject Wall1;
+	public GameObject Wall2;
+	public Material Trans;
+	public Material Opaque;
+
 	void OnTriggerEnter (Collider other)
 	{
-		if(other.tag == "a")print ("tag is a");
-		print ("Someone is in the room\n");
-	}
-
-     
+		Wall1.GetComponent<Renderer>().material = Trans; 
+		Wall2.GetComponent<Renderer>().material = Trans; 
+	}   
+	void OnTriggerExit (Collider other)
+	{
+		Wall1.GetComponent<Renderer>().material = Opaque; 
+		Wall2.GetComponent<Renderer>().material = Opaque; 
+	}  
 }
