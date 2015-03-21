@@ -77,8 +77,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_Constraints: 116
+  m_CollisionDetection: 2
 --- !u!65 &6589656
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -102,9 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb6b7e78a6e16449bcd2468f9176873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Horizontal: L_XAxis_1
-  Vertical: L_YAxis_1
-  cameraVelocity: 15
 --- !u!114 &11417700
 MonoBehaviour:
   m_ObjectHideFlags: 1
