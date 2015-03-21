@@ -452,6 +452,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9690950, guid: abeb5a7fd97913243823b391d52914d3, type: 2}
+      propertyPath: m_Time
+      value: .5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11412860, guid: abeb5a7fd97913243823b391d52914d3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: abeb5a7fd97913243823b391d52914d3, type: 2}
@@ -2073,10 +2077,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2076956, guid: b43230602b13537438d8bf07ca4b3827, type: 2}
-      propertyPath: near clip plane
-      value: -1000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b43230602b13537438d8bf07ca4b3827, type: 2}
   m_IsPrefabParent: 0
@@ -2452,21 +2452,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 448828, guid: 548deefa03d5ef14d8f5b9a4ab6fdae9, type: 2}
   m_PrefabInternal: {fileID: 988295797}
---- !u!1 &1049392025
-GameObject:
-  m_PrefabParentObject: {fileID: 123542, guid: b43230602b13537438d8bf07ca4b3827, type: 2}
-  m_PrefabInternal: {fileID: 708072811}
---- !u!114 &1049392031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1049392025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bb6b7e78a6e16449bcd2468f9176873, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1052464862
 GameObject:
   m_ObjectHideFlags: 0
