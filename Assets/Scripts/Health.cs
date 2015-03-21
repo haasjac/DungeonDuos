@@ -19,8 +19,6 @@ public class Health : MonoBehaviour {
         if (player == 2) {
             maxXValue = healthTransform.position.x;
             minXValue = healthTransform.position.x + healthTransform.rect.width;
-            Debug.Log(minXValue);
-            Debug.Log(maxXValue);
         }
         else {
             maxXValue = healthTransform.position.x;
@@ -68,6 +66,7 @@ public class Health : MonoBehaviour {
     }
 
     public void changeHealth(int change) {
+        this.gameObject.GetComponent<Animator>().SetTrigger("hit");
         currentHealth += change;
     }
 }
