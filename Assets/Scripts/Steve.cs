@@ -43,6 +43,7 @@ public class Steve : MonoBehaviour {
 			GetComponent<Rigidbody>().velocity = Vector3.zero;
 		}
 		if (Input.GetButtonDown (B_button) && !running) {
+            gameObject.GetComponent<TrailRenderer>().enabled = true;
 			running = true;
 			run_clock = 0;
 			run_speed += power_up_speed;
@@ -50,6 +51,7 @@ public class Steve : MonoBehaviour {
 		if (running && run_clock < run_time) {
 			run_clock += Time.deltaTime;
 		} else if (running) {
+            gameObject.GetComponent<TrailRenderer>().enabled = false;
 			running = false;
 			run_speed -= power_up_speed;
 		}
