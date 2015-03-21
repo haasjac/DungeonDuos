@@ -11,6 +11,8 @@ GameObject:
   - 33: {fileID: 3305810}
   - 23: {fileID: 2385850}
   - 95: {fileID: 9577908}
+  - 54: {fileID: 5488566}
+  - 65: {fileID: 6560504}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -61,6 +63,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159606}
   m_Mesh: {fileID: 4300000, guid: b0c2fbbb7f46d114c812beeca1203285, type: 3}
+--- !u!54 &5488566
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159606}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &6560504
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .250000209, y: 2.5, z: .500000119}
+  m_Center: {x: 2.23288339e-08, y: -1.81421633e-08, z: .25}
 --- !u!95 &9577908
 Animator:
   serializedVersion: 3
