@@ -49,7 +49,13 @@ public class Health : MonoBehaviour {
             heart.GetComponent<AudioSource>().pitch = 1.0f - heartcount;
         }
 
-       
+		if (currentHealth <= 0) {
+			Time.timeScale = 0;
+			if (Input.GetButtonDown("Submit")) {
+				Application.LoadLevel(Application.loadedLevel);
+				Time.timeScale = 1;
+			}
+		}
         healthBar();
     }
 

@@ -11,6 +11,7 @@ TagManager:
   - Ramp
   - Key
   - locked_door
+  - EnemyEnemy
   layers:
   - Default
   - TransparentFX

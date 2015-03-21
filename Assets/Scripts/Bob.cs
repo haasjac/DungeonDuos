@@ -5,6 +5,7 @@ public class Bob : MonoBehaviour {
 
 	public string Horizontal = "L_XAxis_2";
 	public string Vertical = "L_YAxis_2";
+	public string A_button = "A_2";
 	public string B_button = "B_2";
 	public string X_button = "X_2";
 	public float leap_force = 30f;
@@ -12,6 +13,8 @@ public class Bob : MonoBehaviour {
 	public float jump_time = 0.1f;
 	Vector3 ramp_vec = new Vector3 (0, 0, 0);
 	public bool jumping = false;
+	public int damage = 50;
+	public int damage_range = 10;
 	//bool ramp = false;
 	float jump_clock = 0;
 	Vector3 tempjump = new Vector3(0,0,0);
@@ -70,6 +73,19 @@ public class Bob : MonoBehaviour {
 			//Steve.transform.position = temppos;
 
 		}
+
+		if (Input.GetButtonDown(A_button)) {
+			//Debug.Log("ATTACK");
+			foreach (GameObject item in enemies) {
+				float distA = Vector3.Distance(item.transform.position, this.transform.position);
+				//Debug.Log(distA);
+				if (distA < damage_range) {
+					//Debug.Log(item);
+					item.GetComponent<enemyHealth>().changeHealth((-1 * damage));
+				}
+			}
+		}
+
 		if (swap) {
 			float step = run_speed * 5 * Time.deltaTime;
 			transform.position = Vector3.MoveTowards(transform.position, stevepos, step);
