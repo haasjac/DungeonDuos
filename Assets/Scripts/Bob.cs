@@ -23,11 +23,13 @@ public class Bob : MonoBehaviour {
 	public bool swap = false;
 	Vector3 bobpos;
 	Vector3 stevepos;
+	GameObject[] enemies;
 
 
 	// Use this for initialization
 	void Start () {
 		Steve = GameObject.Find ("Steve");
+		enemies = GameObject.FindGameObjectsWithTag("EnemyEnemy");
 	}
 	
 	// Update is called once per frame
@@ -48,13 +50,13 @@ public class Bob : MonoBehaviour {
 			GetComponent<Rigidbody>().velocity =(new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)))* run_speed) + ramp_vec;
 		}
 
-		if (!jumping) {
+		/*if (!jumping) {
 			if (transform.position.y != -2.4f) {
 				Vector3 temp = transform.position;
 				temp.y = -2.4f;
 				transform.position = temp;
 			}
-		}
+		}*/
 
 		if (Input.GetButtonDown (B_button) && !jumping && (Input.GetAxis(Horizontal) != 0 || Input.GetAxis(Vertical) != 0)) {
 			tempjump = new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)));
