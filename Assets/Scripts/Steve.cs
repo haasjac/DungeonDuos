@@ -49,7 +49,7 @@ public class Steve : MonoBehaviour {
 			ramp_vec = collision.GetComponent<Push_block>().push * collision.GetComponent<Push_block>().push_force;
 			//ramp = true;
 		}
-		if (collision.gameObject.tag == "Key") {
+		if (collision.gameObject.tag == "Key" && !has_key) {
 			has_key = true;
 			Destroy(collision.gameObject);
 		}

@@ -8,11 +8,13 @@ using System.Collections;
 
 public class Movement : MonoBehaviour {
 
-	public string Horizontal = "L_XAxis_1";
-	public string Vertical = "L_YAxis_1";
+	//public string Horizontal = "L_XAxis_1";
+	//public string Vertical = "L_YAxis_1";
 
 	// How fast the camera moves
-	public float cameraVelocity = 0.1f;
+	//public float cameraVelocity = 0.1f;
+	GameObject bob;
+	GameObject steve;
 
 	
 	// Use this for initialization
@@ -23,19 +25,24 @@ public class Movement : MonoBehaviour {
 		// we will start with the initial position of the camera in the scene editor
 		// If you want to create cameras dynamically this will be the place to
 		// set the initial transform.positiom.x/y/z
+		bob = GameObject.Find ("Bob");
+		steve = GameObject.Find ("Steve");
 	}
 
-	void FixedUpdate() {
+	//void FixedUpdate() {
 		//GetComponent<Rigidbody>().AddForce((new Vector3 (1, 0, -1) * cameraVelocity)* Input.GetAxis(Vertical));
-	}
+	//}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+		Vector3 pos = new Vector3 ((bob.transform.position.x + steve.transform.position.x) / 2.0f, transform.position.y, (bob.transform.position.z + steve.transform.position.z) / 2.0f);  
+		pos += new Vector3 (1, 0, 1) * -10;
+		transform.position = pos;
 		// Left
 		//if(Input.GetAxis(Horizontal) < 0)
 		//{
 		//if (Mathf.Abs(Input.GetAxis(Horizontal)) > .75)
-		GetComponent<Rigidbody>().velocity =(new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)))* cameraVelocity);
+		//GetComponent<Rigidbody>().velocity =(new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)))* cameraVelocity);
 		//rigidbody.AddForce(Vector3.right);
 		//}
 		// Right
