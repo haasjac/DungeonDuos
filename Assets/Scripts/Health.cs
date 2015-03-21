@@ -8,7 +8,7 @@ public class Health : MonoBehaviour {
     public float cachedY;
     public float minXValue;
     public float maxXValue;
-    public int currentHealth;
+    private int currentHealth;
     public int maxHealth;
     public Text healthtext;
     public Image visualHealth;
@@ -65,5 +65,9 @@ public class Health : MonoBehaviour {
             return (currentHealth / maxHealth) * 255;
         }
         return 255 - ((currentHealth / maxHealth) * 255);
+    }
+
+    public void changeHealth(int change) {
+        currentHealth += change;
     }
 }
