@@ -13,6 +13,8 @@ public class Steve : MonoBehaviour {
 	Vector3 ramp_vec = new Vector3 (0, 0, 0);
 	public float power_up_speed = 10f;
 	public GameObject Bob;
+	public int damage = 50;
+	public int damage_range = 10;
 	bool has_key = false;
 	public bool lantern = false;
 	GameObject[] enemies;
@@ -23,7 +25,7 @@ public class Steve : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Bob = GameObject.Find("Bob");
-		enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		enemies = GameObject.FindGameObjectsWithTag("EnemyEnemy");
 	}
 	
 	// Update is called once per frame
@@ -65,12 +67,13 @@ public class Steve : MonoBehaviour {
 			}
 		}
 		if (Input.GetButtonDown(A_button)) {
-			//Debug.Log(enemies);
+			//Debug.Log("ATTACK");
 			foreach (GameObject item in enemies) {
 				float distA = Vector3.Distance(item.transform.position, this.transform.position);
 				//Debug.Log(distA);
-				if (distA < 20f) {
-
+				if (distA < damage_range) {
+					//Debug.Log(item);
+					item.GetComponent<enemyHealth>().changeHealth((-1 * damage));
 				}
 			}
 		}

@@ -29,6 +29,13 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (currentHealth <= 0) {
+			Time.timeScale = 0;
+			if (Input.GetButtonDown("Submit")) {
+				Application.LoadLevel(Application.loadedLevel);
+				Time.timeScale = 1;
+			}
+		}
         healthBar();
     }
 
