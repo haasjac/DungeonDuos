@@ -315,7 +315,6 @@ GameObject:
   - 33: {fileID: 712946784}
   - 65: {fileID: 712946783}
   - 23: {fileID: 712946782}
-  - 114: {fileID: 712946785}
   m_Layer: 0
   m_Name: Wall3
   m_TagString: Untagged
@@ -378,20 +377,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 712946780}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &712946785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 712946780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e895a018b302bc44e864d166695f4694, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Wall1: {fileID: 712946780}
-  Wall2: {fileID: 0}
-  Trans: {fileID: 2100000, guid: ee3efdeff8dadb240bf1ea3d08664b93, type: 2}
 --- !u!1 &817034276
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +578,10 @@ Prefab:
       propertyPath: m_Name
       value: Wall_with_door1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fbe4f84c4dc8b614386fd14c959ebfdd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbe4f84c4dc8b614386fd14c959ebfdd, type: 3}
   m_IsPrefabParent: 0
@@ -728,6 +717,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f93742feca797ab4e9f464b4b33574fa, type: 2}
+    - target: {fileID: 100000, guid: fbe4f84c4dc8b614386fd14c959ebfdd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbe4f84c4dc8b614386fd14c959ebfdd, type: 3}
   m_IsPrefabParent: 0
@@ -783,6 +776,7 @@ MonoBehaviour:
   Wall1: {fileID: 712946780}
   Wall2: {fileID: 1002299111}
   Trans: {fileID: 2100000, guid: ee3efdeff8dadb240bf1ea3d08664b93, type: 2}
+  Opaque: {fileID: 2100000, guid: f93742feca797ab4e9f464b4b33574fa, type: 2}
 --- !u!65 &1456609921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -826,6 +820,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb6b7e78a6e16449bcd2468f9176873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Horizontal: Horizontal1
+  Vertical: Vertical1
+  cameraVelocity: 10
 --- !u!23 &1507724072
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1050,6 +1047,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1987383679}
+  - 114: {fileID: 1987383680}
+  - 65: {fileID: 1987383681}
   m_Layer: 0
   m_Name: Room2
   m_TagString: Untagged
@@ -1074,6 +1073,33 @@ Transform:
   - {fileID: 1417782763}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1987383680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1987383678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e895a018b302bc44e864d166695f4694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wall1: {fileID: 817034276}
+  Wall2: {fileID: 1983129276}
+  Trans: {fileID: 2100000, guid: ee3efdeff8dadb240bf1ea3d08664b93, type: 2}
+  Opaque: {fileID: 2100000, guid: f93742feca797ab4e9f464b4b33574fa, type: 2}
+--- !u!65 &1987383681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1987383678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.61000013, y: 2.22000003, z: -6.05000019}
+  m_Center: {x: -6.78000021, y: .5, z: 1.99000001}
 --- !u!1 &2093478122
 GameObject:
   m_ObjectHideFlags: 0
