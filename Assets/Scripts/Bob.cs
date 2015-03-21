@@ -78,6 +78,7 @@ public class Bob : MonoBehaviour {
 
 		if (Input.GetButtonDown(A_button)) {
 			//Debug.Log("ATTACK");
+            GameObject.Find("Swoosh" + Random.Range(1, 4)).GetComponent<AudioSource>().Play();
 			foreach (GameObject item in enemies) {
 				float distA = Vector3.Distance(item.transform.position, this.transform.position);
 				//Debug.Log(distA);
