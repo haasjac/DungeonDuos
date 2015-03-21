@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour {
     public RectTransform healthTransform;
+    public int player;
     public float cachedY;
     public float minXValue;
     public float maxXValue;
@@ -15,10 +16,16 @@ public class Health : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         cachedY = healthTransform.position.y;
-        maxXValue = healthTransform.position.x;
-        Debug.Log(maxXValue);
-        minXValue = healthTransform.position.x - healthTransform.rect.width;
-        Debug.Log(minXValue);
+        if (player == 2) {
+            maxXValue = healthTransform.position.x;
+            minXValue = healthTransform.position.x + healthTransform.rect.width;
+            Debug.Log(minXValue);
+            Debug.Log(maxXValue);
+        }
+        else {
+            maxXValue = healthTransform.position.x;
+            minXValue = healthTransform.position.x - healthTransform.rect.width;
+        }
         currentHealth = maxHealth;
 	}
 	
@@ -35,7 +42,6 @@ public class Health : MonoBehaviour {
         healthtext.text = "Health: " + currentHealth;
         float currentXValue = mapValues(currentHealth, maxHealth, minXValue, maxXValue);
         healthTransform.position = new Vector3(currentXValue, cachedY);
-        Debug.Log(currentXValue);
 
         if (currentHealth > maxHealth / 2) {
             visualHealth.color = new Color32((byte)mapColor(currentHealth, maxHealth, true), 255, 0, 255);
@@ -47,6 +53,9 @@ public class Health : MonoBehaviour {
 
     private float mapValues(float currentHealth, float maxHealth, float outMin, float outMax)
     {
+        if (player == 2) {
+            return outMin - ((currentHealth / maxHealth) * (outMin - outMax));
+        }
         return (currentHealth / maxHealth) * (outMax + Mathf.Abs(outMin)) + outMin;
     }
 
