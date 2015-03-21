@@ -7,9 +7,13 @@ using System.Collections;
 // Attach to a camera GameObject (e.g MainCamera) for functionality.
 
 public class Movement : MonoBehaviour {
-	
+
+	public string Horizontal = "Horizontal1";
+	public string Vertical = "Vertical1";
+
 	// How fast the camera moves
-	int cameraVelocity = 10;
+	public int cameraVelocity = 10;
+
 	
 	// Use this for initialization
 	void Start () {
@@ -20,28 +24,36 @@ public class Movement : MonoBehaviour {
 		// If you want to create cameras dynamically this will be the place to
 		// set the initial transform.positiom.x/y/z
 	}
-	
+
+	void FixedUpdate() {
+		//GetComponent<Rigidbody>().AddForce((new Vector3 (1, 0, -1) * cameraVelocity)* Input.GetAxis(Vertical));
+	}
+
 	// Update is called once per frame
 	void Update () {
 		// Left
-		if((Input.GetKey(KeyCode.LeftArrow)))
-		{
-			transform.Translate((new Vector3 (-1, 0, 1)* cameraVelocity) * Time.deltaTime);
-		}
+		//if(Input.GetAxis(Horizontal) < 0)
+		//{
+		if (Mathf.Abs(Input.GetAxis(Horizontal)) > .75)
+			transform.Translate((new Vector3 (1, 0, -1)* cameraVelocity * Input.GetAxis(Horizontal)) * Time.deltaTime);
+		//rigidbody.AddForce(Vector3.right);
+		//}
 		// Right
-		if((Input.GetKey(KeyCode.RightArrow)))
-		{
-			transform.Translate((new Vector3 (1, 0, -1) * cameraVelocity) * Time.deltaTime);
-		}
+		//if(Input.GetAxis(Horizontal) > 0)
+		//{
+		//	transform.Translate((new Vector3 (1, 0, -1) * cameraVelocity) * Time.deltaTime);
+		//}
 		// Up
-		if((Input.GetKey(KeyCode.UpArrow)))
-		{
-			transform.Translate((new Vector3 (1, 0, 1) * cameraVelocity) * Time.deltaTime);
-		}
+		//if(Input.GetAxis(Vertical) > 0)
+		//{
+		//Debug.Log (Mathf.Abs (Input.GetAxis (Vertical)));
+		if (Mathf.Abs(Input.GetAxis(Vertical)) > .75)
+			transform.Translate((new Vector3 (-1, 0, -1) * cameraVelocity* Input.GetAxis(Vertical)) * Time.deltaTime);
+		//}
 		// Down
-		if(Input.GetKey(KeyCode.DownArrow))
-		{
-			transform.Translate((new Vector3 (-1, 0, -1) * cameraVelocity) * Time.deltaTime);
-		}
+		//if(Input.GetAxis(Vertical) < 0)
+		//{
+			//transform.Translate((new Vector3 (-1, 0, -1) * cameraVelocity) * Time.deltaTime);
+		//}
 	}
 }
