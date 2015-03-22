@@ -94,17 +94,20 @@ public class Bob : MonoBehaviour {
 			//Debug.Log("ATTACK");
             GameObject.Find("Swoosh" + Random.Range(1, 4)).GetComponent<AudioSource>().Play();
 			foreach (GameObject item in enemies) {
-                Vector3 direction = item.transform.position - this.transform.position;
-                float distA = direction.magnitude;
-                direction = direction / distA;
-				distA = Vector3.Distance(item.transform.position, this.transform.position);
-				//Debug.Log(distA);
-				if (distA < damage_range) {
-					//Debug.Log(item);
-                    if (Mathf.Abs(Vector3.Angle(vel, direction)) <= 70)
-                    {
-                        item.GetComponent<enemyHealth>().changeHealth((-1 * damage));
-                    }
+				if (item != null) {
+	                Vector3 direction = item.transform.position - this.transform.position;
+	                float distA = direction.magnitude;
+	                direction = direction / distA;
+					distA = Vector3.Distance(item.transform.position, this.transform.position);
+					//Debug.Log(distA);
+					if (distA < damage_range) {
+						//Debug.Log(item);
+	                    if (Mathf.Abs(Vector3.Angle(vel, direction)) <= 70)
+	                    {
+	                        item.GetComponent<enemyHealth>().changeHealth((-1 * damage));
+							//enemies = GameObject.FindGameObjectsWithTag("EnemyEnemy");
+	                    }
+					}
 				}
 			}
 		}
