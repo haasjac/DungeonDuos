@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class Steve : MonoBehaviour {
-
-	//public Animation a;
+	
 	public string Horizontal = "L_XAxis_1";
 	public string Vertical = "L_YAxis_1";
 	public string A_button = "A_1";
@@ -62,8 +61,11 @@ public class Steve : MonoBehaviour {
 
 			if (GetComponent<Rigidbody> ().velocity == Vector3.zero) {
 				this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", false);
+
 			}
-			else {this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", true);
+			else {
+				this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", true);
+				this.gameObject.GetComponentInChildren<Animator>().CrossFade("Running",0f);
 				//a.Stop("Idle");
 				}
 		} 
@@ -86,6 +88,8 @@ public class Steve : MonoBehaviour {
 			running = false;
 			run_speed -= power_up_speed;
 			this.gameObject.GetComponentInChildren<Animator>().SetBool("Dash", false);
+			this.gameObject.GetComponentInChildren<Animator>().SetBool("Attack",false);
+			this.gameObject.GetComponentInChildren<Animator>().SetBool("Lantern",false);
 		}
 
 
@@ -98,6 +102,8 @@ public class Steve : MonoBehaviour {
 			//Bob.GetComponent<BoxCollider>().enabled = true;
 			//float step = run_speed * Time.deltaTime;
 			lantern = true;
+			this.gameObject.GetComponentInChildren<Animator>().SetBool("Lantern",true);
+			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Lantern",0f);
 			//Bob.transform.position = Vector3.MoveTowards(Bob.transform.position, transform.position, step);
             StartCoroutine(particle());
 		}
@@ -111,6 +117,8 @@ public class Steve : MonoBehaviour {
 		if (Input.GetButtonDown(A_button)) {
 			//Debug.Log("ATTACK");
             GameObject.Find("Swoosh" + Random.Range(1, 4)).GetComponent<AudioSource>().Play();
+			//this.gameObject.GetComponentInChildren<Animator>().SetBool("Attack",true);
+			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Attack",0f);
             foreach (GameObject item in enemies)
             {
                 Vector3 direction = item.transform.position - this.transform.position;
@@ -127,7 +135,8 @@ public class Steve : MonoBehaviour {
                     }
                 }
            }
-		}
+		   
+		}//else 
 	}
 
     IEnumerator particle()
