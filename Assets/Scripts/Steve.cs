@@ -28,7 +28,7 @@ public class Steve : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Vector3 vel = new Vector3 (1,0,1);
+		vel = new Vector3 (1,0,1);
 		transform.rotation = Quaternion.LookRotation (vel);
 		ystart = transform.position.y;
 		Bob = GameObject.Find("Bob");
