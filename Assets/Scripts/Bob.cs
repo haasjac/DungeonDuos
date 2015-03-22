@@ -26,6 +26,9 @@ public class Bob : MonoBehaviour {
 	GameObject[] enemies;
 	float ystart;
 
+    public GameObject sParticles;
+    public GameObject bParticles;
+
 
 	// Use this for initialization
 	void Start () {
@@ -69,6 +72,7 @@ public class Bob : MonoBehaviour {
 			transform.position = pos;
 		}
 		if (Input.GetButtonDown (X_button)&& !jumping && !Steve.GetComponent<Steve>().lantern) {
+            StartCoroutine(particle());
 			swap = true;
 			bobpos = transform.position;
 			stevepos = Steve.transform.position;
@@ -101,6 +105,16 @@ public class Bob : MonoBehaviour {
 		}
 
 	}
+
+    IEnumerator particle()
+    {
+        GameObject.Find("Puff").GetComponent<AudioSource>().Play();
+        sParticles.SetActive(true);
+        bParticles.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        sParticles.SetActive(false);
+        bParticles.SetActive(false);
+    }
 
 	void OnTriggerEnter(Collider collision) {
 		//Debug.Log ("hit");
