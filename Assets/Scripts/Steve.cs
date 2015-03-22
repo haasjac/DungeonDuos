@@ -60,8 +60,12 @@ public class Steve : MonoBehaviour {
 			GetComponent<Rigidbody> ().velocity = (new Vector3 (Input.GetAxis (Horizontal) - Input.GetAxis (Vertical), 0, -(Input.GetAxis (Horizontal) + Input.GetAxis (Vertical))) * run_speed) + ramp_vec;
 			
 			if (GetComponent<Rigidbody> ().velocity == Vector3.zero) {
+
+		//		this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", false);
+
 				this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", false);
 				
+
 			}
 			else {
 				this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", true);
@@ -89,7 +93,6 @@ public class Steve : MonoBehaviour {
 			run_speed -= power_up_speed;
 			this.gameObject.GetComponentInChildren<Animator>().SetBool("Dash", false);
 			this.gameObject.GetComponentInChildren<Animator>().SetBool("Attack",false);
-			this.gameObject.GetComponentInChildren<Animator>().SetBool("Lantern",false);
 		}
 		
 		
@@ -102,7 +105,6 @@ public class Steve : MonoBehaviour {
 			//Bob.GetComponent<BoxCollider>().enabled = true;
 			//float step = run_speed * Time.deltaTime;
 			lantern = true;
-			this.gameObject.GetComponentInChildren<Animator>().SetBool("Lantern",true);
 			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Lantern",0f);
 			//Bob.transform.position = Vector3.MoveTowards(Bob.transform.position, transform.position, step);
 			StartCoroutine(particle());
@@ -121,17 +123,19 @@ public class Steve : MonoBehaviour {
 			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Attack",0f);
 			foreach (GameObject item in enemies)
 			{
-				Vector3 direction = item.transform.position - this.transform.position;
-				float distA = direction.magnitude;
-				direction = direction / distA;
-				distA = Vector3.Distance(item.transform.position, this.transform.position);
-				//Debug.Log(distA);
-				if (distA < damage_range)
-				{
-					//Debug.Log(item);
-					if (Mathf.Abs(Vector3.Angle(vel, direction)) <= 70)
-					{
-						item.GetComponent<enemyHealth>().changeHealth((-1 * damage));
+				if (item != null) {
+					Vector3 direction = item.transform.position - this.transform.position;
+					float distA = direction.magnitude;
+					direction = direction / distA;
+					distA = Vector3.Distance(item.transform.position, this.transform.position);
+					//Debug.Log(distA);
+					if (distA < damage_range) {
+						//Debug.Log(item);
+						if (Mathf.Abs(Vector3.Angle(vel, direction)) <= 70)
+						{
+							item.GetComponent<enemyHealth>().changeHealth((-1 * damage));
+							//enemies = GameObject.FindGameObjectsWithTag("EnemyEnemy");
+						}
 					}
 				}
 			}
