@@ -138,11 +138,15 @@ public class Bob : MonoBehaviour {
 		}
 
 		if (swap) {
+			GetComponent<BoxCollider>().enabled = false;
+			Steve.GetComponent<BoxCollider>().enabled = false;
 			float step = run_speed * 5 * Time.deltaTime;
 			transform.position = Vector3.MoveTowards(transform.position, stevepos, step);
 			Steve.transform.position = Vector3.MoveTowards(Steve.transform.position, bobpos, step);
 			if (transform.position == stevepos && Steve.transform.position == bobpos) {
 				swap = false;
+				GetComponent<BoxCollider>().enabled = true;
+				Steve.GetComponent<BoxCollider>().enabled = true;
 			}
 		}
 

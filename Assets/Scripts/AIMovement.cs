@@ -68,12 +68,15 @@ public class AIMovement : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Player1") {
             GameObject.Find("BackgroundBar").GetComponent<Health>().changeHealth((-1) * damage);
+			Vector3 dir = (coll.transform.position - transform.position).normalized;
+			StartCoroutine(knockback(dir));
         }
         else if (coll.gameObject.tag == "Player2") {
             GameObject.Find("BackgroundBar2").GetComponent<Health>().changeHealth((-1) * damage);
+			Vector3 dir = (coll.transform.position - transform.position).normalized;
+			StartCoroutine(knockback(dir));
         }
-        Vector3 dir = (coll.transform.position - transform.position).normalized;
-        StartCoroutine(knockback(dir));
+        
     }
 
     IEnumerator knockback(Vector3 dir)
