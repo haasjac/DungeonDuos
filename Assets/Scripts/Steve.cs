@@ -114,9 +114,13 @@ public class Steve : MonoBehaviour {
 			StartCoroutine(particle());
 		}
 		if (lantern) {
+			GetComponent<BoxCollider>().enabled = false;
+			Bob.GetComponent<BoxCollider>().enabled = false;
 			float step = run_speed * 5 * Time.deltaTime;
 			Bob.transform.position = Vector3.MoveTowards(Bob.transform.position, transform.position, step);
 			if (Bob.transform.position == transform.position) {
+				GetComponent<BoxCollider>().enabled = true;
+				Bob.GetComponent<BoxCollider>().enabled = true;
 				lantern = false;
 			}
 		}
