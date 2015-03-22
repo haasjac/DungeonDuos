@@ -159,7 +159,7 @@ public class Bob : MonoBehaviour {
 			collision.gameObject.GetComponent<Key>().dead = true;
 			//Destroy(collision.gameObject);
 		}
-		
+
 	}
 
 	void OnCollisionEnter(Collision collision) {
