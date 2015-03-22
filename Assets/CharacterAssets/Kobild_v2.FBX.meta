@@ -1,0 +1,293 @@
+fileFormatVersion: 2
+guid: a072938447e46d542866a782a3a28556
+timeCreated: 1427003154
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Box003
+    100002: //RootNode
+    100004: KobildBiped
+    100006: KobildBiped Footsteps
+    100008: KobildBiped Head
+    100010: KobildBiped HeadNub
+    100012: KobildBiped L Calf
+    100014: KobildBiped L Clavicle
+    100016: KobildBiped L Finger0
+    100018: KobildBiped L Finger0Nub
+    100020: KobildBiped L Foot
+    100022: KobildBiped L Forearm
+    100024: KobildBiped L Hand
+    100026: KobildBiped L Thigh
+    100028: KobildBiped L Toe0
+    100030: KobildBiped L Toe01
+    100032: KobildBiped L Toe02
+    100034: KobildBiped L Toe0Nub
+    100036: KobildBiped L UpperArm
+    100038: KobildBiped Neck
+    100040: KobildBiped Pelvis
+    100042: KobildBiped R Calf
+    100044: KobildBiped R Clavicle
+    100046: KobildBiped R Finger0
+    100048: KobildBiped R Finger0Nub
+    100050: KobildBiped R Foot
+    100052: KobildBiped R Forearm
+    100054: KobildBiped R Hand
+    100056: KobildBiped R Thigh
+    100058: KobildBiped R Toe0
+    100060: KobildBiped R Toe01
+    100062: KobildBiped R Toe02
+    100064: KobildBiped R Toe0Nub
+    100066: KobildBiped R UpperArm
+    100068: KobildBiped Spine
+    100070: KobildBiped Spine1
+    100072: KobildBiped Spine2
+    100074: KobildBiped Spine3
+    400000: Box003
+    400002: //RootNode
+    400004: KobildBiped
+    400006: KobildBiped Footsteps
+    400008: KobildBiped Head
+    400010: KobildBiped HeadNub
+    400012: KobildBiped L Calf
+    400014: KobildBiped L Clavicle
+    400016: KobildBiped L Finger0
+    400018: KobildBiped L Finger0Nub
+    400020: KobildBiped L Foot
+    400022: KobildBiped L Forearm
+    400024: KobildBiped L Hand
+    400026: KobildBiped L Thigh
+    400028: KobildBiped L Toe0
+    400030: KobildBiped L Toe01
+    400032: KobildBiped L Toe02
+    400034: KobildBiped L Toe0Nub
+    400036: KobildBiped L UpperArm
+    400038: KobildBiped Neck
+    400040: KobildBiped Pelvis
+    400042: KobildBiped R Calf
+    400044: KobildBiped R Clavicle
+    400046: KobildBiped R Finger0
+    400048: KobildBiped R Finger0Nub
+    400050: KobildBiped R Foot
+    400052: KobildBiped R Forearm
+    400054: KobildBiped R Hand
+    400056: KobildBiped R Thigh
+    400058: KobildBiped R Toe0
+    400060: KobildBiped R Toe01
+    400062: KobildBiped R Toe02
+    400064: KobildBiped R Toe0Nub
+    400066: KobildBiped R UpperArm
+    400068: KobildBiped Spine
+    400070: KobildBiped Spine1
+    400072: KobildBiped Spine2
+    400074: KobildBiped Spine3
+    4300000: Box003
+    7400000: Run
+    9500000: //RootNode
+    13700000: Box003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Box003
+        weight: 1
+      - path: KobildBiped
+        weight: 1
+      - path: KobildBiped/KobildBiped Footsteps
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped L Thigh
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped L Thigh/KobildBiped
+          L Calf
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped L Thigh/KobildBiped
+          L Calf/KobildBiped L Foot
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped L Thigh/KobildBiped
+          L Calf/KobildBiped L Foot/KobildBiped L Toe0
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped L Thigh/KobildBiped
+          L Calf/KobildBiped L Foot/KobildBiped L Toe0/KobildBiped L Toe01
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped L Thigh/KobildBiped
+          L Calf/KobildBiped L Foot/KobildBiped L Toe0/KobildBiped L Toe01/KobildBiped
+          L Toe02
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped L Thigh/KobildBiped
+          L Calf/KobildBiped L Foot/KobildBiped L Toe0/KobildBiped L Toe01/KobildBiped
+          L Toe02/KobildBiped L Toe0Nub
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped R Thigh
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped R Thigh/KobildBiped
+          R Calf
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped R Thigh/KobildBiped
+          R Calf/KobildBiped R Foot
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped R Thigh/KobildBiped
+          R Calf/KobildBiped R Foot/KobildBiped R Toe0
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped R Thigh/KobildBiped
+          R Calf/KobildBiped R Foot/KobildBiped R Toe0/KobildBiped R Toe01
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped R Thigh/KobildBiped
+          R Calf/KobildBiped R Foot/KobildBiped R Toe0/KobildBiped R Toe01/KobildBiped
+          R Toe02
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped R Thigh/KobildBiped
+          R Calf/KobildBiped R Foot/KobildBiped R Toe0/KobildBiped R Toe01/KobildBiped
+          R Toe02/KobildBiped R Toe0Nub
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped Head
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped Head/KobildBiped
+          HeadNub
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped L Clavicle
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped L Clavicle/KobildBiped
+          L UpperArm
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped L Clavicle/KobildBiped
+          L UpperArm/KobildBiped L Forearm
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped L Clavicle/KobildBiped
+          L UpperArm/KobildBiped L Forearm/KobildBiped L Hand
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped L Clavicle/KobildBiped
+          L UpperArm/KobildBiped L Forearm/KobildBiped L Hand/KobildBiped L Finger0
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped L Clavicle/KobildBiped
+          L UpperArm/KobildBiped L Forearm/KobildBiped L Hand/KobildBiped L Finger0/KobildBiped
+          L Finger0Nub
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped R Clavicle
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped R Clavicle/KobildBiped
+          R UpperArm
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped R Clavicle/KobildBiped
+          R UpperArm/KobildBiped R Forearm
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped R Clavicle/KobildBiped
+          R UpperArm/KobildBiped R Forearm/KobildBiped R Hand
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped R Clavicle/KobildBiped
+          R UpperArm/KobildBiped R Forearm/KobildBiped R Hand/KobildBiped R Finger0
+        weight: 1
+      - path: KobildBiped/KobildBiped Pelvis/KobildBiped Spine/KobildBiped Spine1/KobildBiped
+          Spine2/KobildBiped Spine3/KobildBiped Neck/KobildBiped R Clavicle/KobildBiped
+          R UpperArm/KobildBiped R Forearm/KobildBiped R Hand/KobildBiped R Finger0/KobildBiped
+          R Finger0Nub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
