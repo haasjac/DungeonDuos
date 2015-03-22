@@ -44,6 +44,7 @@ public class Steve : MonoBehaviour {
 		}
 		if (Input.GetButtonDown (B_button) && !running) {
             gameObject.GetComponent<TrailRenderer>().enabled = true;
+            GameObject.Find("Dash" + Random.Range(1, 3)).GetComponent<AudioSource>().Play();
 			running = true;
 			run_clock = 0;
 			run_speed += power_up_speed;

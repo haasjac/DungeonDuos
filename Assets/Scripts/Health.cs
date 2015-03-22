@@ -35,18 +35,15 @@ public class Health : MonoBehaviour {
 
         
         if ((currentHealth <= (float)maxHealth / 2) && !heart.GetComponent<AudioSource>().isPlaying) {
-            //Debug.Log("Print");
             heart.GetComponent<AudioSource>().Play();
             heartcount = (float)currentHealth / ((float)maxHealth / 2); // percent of last 50% health
-            //Debug.Log(heartcount);
             heart.GetComponent<AudioSource>().volume =  1.0f - heartcount;
-            heart.GetComponent<AudioSource>().pitch = 1.0f - heartcount;
+            heart.GetComponent<AudioSource>().pitch = 3.0f - (2 * heartcount);
         }
         else if ((currentHealth <= (float)maxHealth / 2) && heart.GetComponent<AudioSource>().isPlaying) {
             heartcount = (float)currentHealth / ((float)maxHealth / 2); // percent of last 50% health
-            //Debug.Log(heartcount);
             heart.GetComponent<AudioSource>().volume = 1.0f - heartcount;
-            heart.GetComponent<AudioSource>().pitch = 1.0f - heartcount;
+            heart.GetComponent<AudioSource>().pitch = 3.0f - (2 * heartcount);
         }
 
 		if (currentHealth <= 0) {
