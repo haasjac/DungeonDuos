@@ -345,7 +345,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    gravityModifier: -10
+    gravityModifier: -1
     inheritVelocity: 0
     maxNumParticles: 1000
   ShapeModule:
@@ -356,7 +356,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxX: 1
-    boxY: 1
+    boxY: .100000001
     boxZ: 1
     arc: 360
     placementMode: 0
@@ -398,7 +398,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    cnt0: 35
+    cnt0: 10
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -1181,7 +1181,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_RenderMode: 4
-  m_MaxParticleSize: .5
+  m_MaxParticleSize: .100000001
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2

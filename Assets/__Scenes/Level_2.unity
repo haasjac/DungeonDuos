@@ -468,7 +468,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 148935388}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bb6b7e78a6e16449bcd2468f9176873, type: 3}
   m_Name: 
@@ -2634,6 +2634,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 19839806, guid: c8eea89af6a586444ad658f5e79daa2d, type: 2}
+      propertyPath: InitialModule.gravityModifier
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19839806, guid: c8eea89af6a586444ad658f5e79daa2d, type: 2}
+      propertyPath: EmissionModule.cnt0
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 19839806, guid: c8eea89af6a586444ad658f5e79daa2d, type: 2}
+      propertyPath: ShapeModule.boxY
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 19924172, guid: c8eea89af6a586444ad658f5e79daa2d, type: 2}
+      propertyPath: m_MaxParticleSize
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8eea89af6a586444ad658f5e79daa2d, type: 2}
   m_IsPrefabParent: 0
@@ -4636,6 +4652,38 @@ Prefab:
     - target: {fileID: 452390, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
       propertyPath: m_RootOrder
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 19981246, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3bfa2f095c911d649bf4cb92a55ac974, type: 2}
+    - target: {fileID: 19875554, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: EmissionModule.cnt0
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875554, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: ShapeModule.boxY
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875554, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: ShapeModule.boxZ
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875554, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: ShapeModule.boxX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875554, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: ShapeModule.randomDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875554, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: InitialModule.gravityModifier
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19981246, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: m_MaxParticleSize
+      value: .100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}

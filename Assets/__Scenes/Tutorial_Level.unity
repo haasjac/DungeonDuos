@@ -4118,6 +4118,26 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 24.1499996
       objectReference: {fileID: 0}
+    - target: {fileID: 19924172, guid: c8eea89af6a586444ad658f5e79daa2d, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 19839806, guid: c8eea89af6a586444ad658f5e79daa2d, type: 2}
+      propertyPath: ShapeModule.boxY
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19839806, guid: c8eea89af6a586444ad658f5e79daa2d, type: 2}
+      propertyPath: EmissionModule.cnt0
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 19924172, guid: c8eea89af6a586444ad658f5e79daa2d, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e7a5708a96440764c98c6b93698bd511, type: 2}
+    - target: {fileID: 19924172, guid: c8eea89af6a586444ad658f5e79daa2d, type: 2}
+      propertyPath: m_MaxParticleSize
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8eea89af6a586444ad658f5e79daa2d, type: 2}
   m_IsPrefabParent: 0
@@ -5482,6 +5502,10 @@ Prefab:
     - target: {fileID: 106464, guid: f7e3734d1b50dd7448cbc17ac5429b54, type: 2}
       propertyPath: m_Name
       value: Column 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 164886, guid: 9199ac4a44327b344b0f4343f8f00d8a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7e3734d1b50dd7448cbc17ac5429b54, type: 2}
@@ -7442,6 +7466,22 @@ Prefab:
     - target: {fileID: 106218, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19981246, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 19981246, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e7a5708a96440764c98c6b93698bd511, type: 2}
+    - target: {fileID: 19875554, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: ShapeModule.boxY
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875554, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
+      propertyPath: EmissionModule.cnt0
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a01c2387fcd35d4db45740b85deb481, type: 2}
