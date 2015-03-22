@@ -12,6 +12,7 @@ TagManager:
   - Key
   - locked_door
   - EnemyEnemy
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - 
   - BackHealth
   - VisualHealth
-  - 
+  - Enemy
   - 
   - 
   - 

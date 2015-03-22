@@ -20,6 +20,9 @@ public class Steve : MonoBehaviour {
 	GameObject[] enemies;
 	float ystart;
 	Vector3 vel;
+	public float attack_cd = 1f;
+	float attack_clock = 0;
+	bool attack = true;
 	
 	bool running = false;
 	float run_clock = 0;
@@ -28,6 +31,7 @@ public class Steve : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		attack_clock = attack_cd;
 		vel = new Vector3 (1,0,1);
 		transform.rotation = Quaternion.LookRotation (vel);
 		ystart = transform.position.y;
@@ -116,8 +120,15 @@ public class Steve : MonoBehaviour {
 				lantern = false;
 			}
 		}
-		if (Input.GetButtonDown(A_button)) {
+		if (attack_clock >= attack_cd) {
+			attack = true;
+		} else {
+			attack_clock += Time.deltaTime;
+		}
+		if (Input.GetButtonDown(A_button) && attack) {
 			//Debug.Log("ATTACK");
+			attack = false;
+			attack_clock = 0;
 			GameObject.Find("Swoosh" + Random.Range(1, 4)).GetComponent<AudioSource>().Play();
 			//this.gameObject.GetComponentInChildren<Animator>().SetBool("Attack",true);
 			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Attack",0f);

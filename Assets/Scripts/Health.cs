@@ -14,17 +14,18 @@ public class Health : MonoBehaviour {
     public Image visualHealth;
     float heartcount;
     GameObject heart;
+	//bool hit = false;
 
 	// Use this for initialization
 	void Start () {
         cachedY = healthTransform.position.y;
         if (player == 2) {
             maxXValue = healthTransform.position.x;
-            minXValue = healthTransform.position.x + healthTransform.rect.width;
+            minXValue = healthTransform.position.x + healthTransform.rect.width*2;
         }
         else {
             maxXValue = healthTransform.position.x;
-            minXValue = healthTransform.position.x - healthTransform.rect.width;
+            minXValue = healthTransform.position.x - healthTransform.rect.width*2;
         }
         currentHealth = maxHealth;
 	}
@@ -54,6 +55,8 @@ public class Health : MonoBehaviour {
 			}
 		}
         healthBar();
+		//print ("min" + minXValue);
+
     }
 
     private void healthBar()
@@ -63,6 +66,7 @@ public class Health : MonoBehaviour {
         }
         healthtext.text = "Health: " + currentHealth;
         float currentXValue = mapValues(currentHealth, maxHealth, minXValue, maxXValue);
+		//print (currentXValue);
         healthTransform.position = new Vector3(currentXValue, cachedY);
 
         if (currentHealth > maxHealth / 2) {
@@ -90,6 +94,7 @@ public class Health : MonoBehaviour {
     }
 
     public void changeHealth(int change) {
+		//hit = true;
         this.gameObject.GetComponent<Animator>().SetTrigger("hit");
         currentHealth += change;
         if (heart.GetComponent<AudioSource>().isPlaying) {

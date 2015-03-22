@@ -2798,6 +2798,10 @@ Prefab:
       propertyPath: Bob
       value: 
       objectReference: {fileID: 465580489}
+    - target: {fileID: 11461400, guid: 33a3f061114f85a478b7a9436eeb25e3, type: 2}
+      propertyPath: attack_cd
+      value: .75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33a3f061114f85a478b7a9436eeb25e3, type: 2}
   m_IsPrefabParent: 0
@@ -3130,6 +3134,10 @@ Prefab:
       propertyPath: sParticles
       value: 
       objectReference: {fileID: 1195732315}
+    - target: {fileID: 11401460, guid: 32ca65a9d4c3b9b4987b73aec0dc134c, type: 2}
+      propertyPath: attack_cd
+      value: .75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32ca65a9d4c3b9b4987b73aec0dc134c, type: 2}
   m_IsPrefabParent: 0

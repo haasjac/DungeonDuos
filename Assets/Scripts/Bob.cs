@@ -26,6 +26,9 @@ public class Bob : MonoBehaviour {
 	GameObject[] enemies;
 	float ystart;
     Vector3 vel;
+	public float attack_cd = 1f;
+	float attack_clock = 0;
+	bool attack = true;
 
     public GameObject sParticles;
     public GameObject bParticles;
@@ -33,6 +36,7 @@ public class Bob : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		attack_clock = attack_cd;
         vel = new Vector3(1, 0, 1);
         transform.rotation = Quaternion.LookRotation(vel);
 		ystart = transform.position.y;
@@ -101,8 +105,16 @@ public class Bob : MonoBehaviour {
 
 		}
 
+		if (attack_clock >= attack_cd) {
+			attack = true;
+		} else {
+			attack_clock += Time.deltaTime;
+		}
+
 		if (Input.GetButtonDown(A_button)) {
 			//Debug.Log("ATTACK");
+			attack = false;
+			attack_clock = 0;
             GameObject.Find("Swoosh" + Random.Range(1, 4)).GetComponent<AudioSource>().Play();
 			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Attack",0f);
 			//print ("ATAK");

@@ -78,7 +78,7 @@ public class AIMovement : MonoBehaviour {
 
     IEnumerator knockback(Vector3 dir)
     {
-        GetComponent<Rigidbody>().velocity = (-1) * dir * 20;
+        GetComponent<Rigidbody>().velocity = (-1) * dir * 75;
         takedamage.Play();
         yield return new WaitForSeconds(0.2f);
         GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
