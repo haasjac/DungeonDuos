@@ -61,18 +61,15 @@ public class Steve : MonoBehaviour {
 			GetComponent<Rigidbody> ().velocity = (new Vector3 (Input.GetAxis (Horizontal) - Input.GetAxis (Vertical), 0, -(Input.GetAxis (Horizontal) + Input.GetAxis (Vertical))) * run_speed) + ramp_vec;
 
 			if (GetComponent<Rigidbody> ().velocity == Vector3.zero) {
-				this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", false);
+
 			}
-			else {this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", true);
-				//a.Stop("Idle");
-				}
 		} 
 		else if (lantern) {
 			GetComponent<Rigidbody>().velocity = Vector3.zero;
 		}
 		//dash
 		if (Input.GetButtonDown (B_button) && !running) {
-			this.gameObject.GetComponentInChildren<Animator>().SetBool("Dash", true);
+
             gameObject.GetComponent<TrailRenderer>().enabled = true;
             GameObject.Find("Dash" + Random.Range(1, 3)).GetComponent<AudioSource>().Play();
 			running = true;
@@ -85,7 +82,7 @@ public class Steve : MonoBehaviour {
             gameObject.GetComponent<TrailRenderer>().enabled = false;
 			running = false;
 			run_speed -= power_up_speed;
-			this.gameObject.GetComponentInChildren<Animator>().SetBool("Dash", false);
+			
 		}
 
 
