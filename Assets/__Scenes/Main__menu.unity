@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16bdcf32607eaa4db90267ff0b08369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Next_Level: Main_menu
+  Next_Level: Tutorial_Level
 --- !u!1 &129421271
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +276,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 60}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &440178803
 MonoBehaviour:
@@ -298,14 +298,12 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You win!
-
-    Press Start to play again'
+  m_Text: Press Start to Play
 --- !u!222 &440178804
 CanvasRenderer:
   m_ObjectHideFlags: 0
