@@ -33,7 +33,7 @@ public class Bob : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ystart = transform.position.y;
-		Steve = GameObject.Find ("Steve");
+		Steve = GameObject.Find ("Lucian");
 		enemies = GameObject.FindGameObjectsWithTag("EnemyEnemy");
 	}
 	

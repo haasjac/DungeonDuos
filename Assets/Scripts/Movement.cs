@@ -26,7 +26,7 @@ public class Movement : MonoBehaviour {
 		// If you want to create cameras dynamically this will be the place to
 		// set the initial transform.positiom.x/y/z
 		bob = GameObject.Find ("Bob");
-		steve = GameObject.Find ("Steve");
+		steve = GameObject.Find ("Lucian");
 	}
 
 	//void FixedUpdate() {

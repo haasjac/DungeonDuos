@@ -14,7 +14,7 @@ GameObject:
   - 54: {fileID: 5428698}
   - 114: {fileID: 11401460}
   m_Layer: 8
-  m_Name: Bob
+  m_Name: Bob - Copy
   m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

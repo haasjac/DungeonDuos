@@ -22,7 +22,7 @@ public class AIMovement : MonoBehaviour {
 	void Start () {
         agent = gameObject.GetComponent<NavMeshAgent>();
 
-        destinationA = GameObject.Find("Steve").transform;
+        destinationA = GameObject.Find("Lucian").transform;
         destinationB = GameObject.Find("Bob").transform;
         player1 = GameObject.Find("BackgroundBar");
         player2 = GameObject.Find("BackgroundBar2");
