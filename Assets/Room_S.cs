@@ -12,9 +12,9 @@ public class Room_S : MonoBehaviour {
 	public GameObject Torch3;
 	public GameObject Torch4;
 
-	void OnTriggerEnter (Collider other)
+	void OnTriggerStay (Collider other)
 	{
-		if (other.tag == "Player1") {
+		if (other.tag == "Player1" || other.tag == "Player2") {
 			GameObject.Find("Transition").GetComponent<AudioSource>().Play();
 			Wall1.GetComponent<Renderer> ().material = Trans; 
 			Wall2.GetComponent<Renderer> ().material = Trans; 
@@ -26,7 +26,7 @@ public class Room_S : MonoBehaviour {
 	}
 	void OnTriggerExit (Collider other)
 	{
-		if (other.tag == "Player1") {
+		if (other.tag == "Player1" || other.tag == "Player2") {
 			Wall1.GetComponent<Renderer> ().material = Opaque; 
 			Wall2.GetComponent<Renderer> ().material = Opaque;
 			Torch1.GetComponentInChildren<ParticleSystem>().Stop();
