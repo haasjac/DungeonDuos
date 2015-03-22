@@ -13,7 +13,8 @@ public class Menu : MonoBehaviour {
 		if (Input.GetButtonDown("Submit")) {
             GameObject.Find("Stinger").GetComponent<AudioSource>().Play();
 
-			Application.LoadLevel(Next_Level);
+            AutoFade.LoadLevel(Next_Level, 0.25f, 0.25f, Color.black);
+			//Application.LoadLevel(Next_Level);
 		}
 	}
 }
