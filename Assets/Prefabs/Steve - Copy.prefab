@@ -11,25 +11,28 @@ GameObject:
   - 33: {fileID: 3376468}
   - 65: {fileID: 6550352}
   - 23: {fileID: 2372584}
+  - 114: {fileID: 11463442}
   - 54: {fileID: 5428698}
-  - 114: {fileID: 11401460}
-  m_Layer: 8
-  m_Name: Bob
-  m_TagString: Player2
+  - 114: {fileID: 11461400}
+  - 96: {fileID: 9685406}
+  - 120: {fileID: 12052362}
+  m_Layer: 9
+  m_Name: Steve
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &195206
+--- !u!1 &155530
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 448472}
-  - 198: {fileID: 19806932}
-  - 199: {fileID: 19934898}
+  - 4: {fileID: 413834}
+  - 198: {fileID: 19822770}
+  - 199: {fileID: 19993952}
   m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
@@ -37,13 +40,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &448472
+--- !u!4 &413834
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195206}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 155530}
+  m_LocalRotation: {x: .70710659, y: 0, z: 0, w: -.707106948}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -56,10 +59,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.3282967, y: -2.4000001, z: -3.51715899}
+  m_LocalPosition: {x: -29.8999996, y: -2.5, z: .5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 448472}
+  - {fileID: 413834}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2372584
@@ -72,7 +75,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: ac2df1b879017f64aa5a44fdede53e5b, type: 2}
+  - {fileID: 2100000, guid: 0f352aaa2f0510c40939d1d7c19b17bb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -120,7 +123,52 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11401460
+--- !u!96 &9685406
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138388}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: e7a5708a96440764c98c6b93698bd511, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: .5
+  m_StartWidth: 1
+  m_EndWidth: 1
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: .100000001
+  m_Autodestruct: 0
+--- !u!114 &11461400
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -128,30 +176,75 @@ MonoBehaviour:
   m_GameObject: {fileID: 138388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dcb75a83e3523e45ba69ce1c42502e5, type: 3}
+  m_Script: {fileID: 11500000, guid: a3b611fbad8aca044bc6bbc0d60bcd57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Horizontal: L_XAxis_2
-  Vertical: L_YAxis_2
-  A_button: A_2
-  B_button: B_2
-  X_button: X_2
-  leap_force: 15
+  Horizontal: L_XAxis_1
+  Vertical: L_YAxis_1
+  A_button: A_1
+  B_button: B_1
+  X_button: X_1
   run_speed: 15
-  jump_time: .5
-  jumping: 0
+  run_time: 1
+  power_up_speed: 10
+  Bob: {fileID: 0}
   damage: 50
   damage_range: 10
-  Steve: {fileID: 0}
-  swap: 0
-  sParticles: {fileID: 0}
-  bParticles: {fileID: 195206}
---- !u!198 &19806932
+  lantern: 0
+--- !u!114 &11463442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138388}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb6b7e78a6e16449bcd2468f9176873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!120 &12052362
+LineRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138388}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: e9de85ae5f977b04480e953cd637e9bd, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    startWidth: 1
+    endWidth: 1
+    m_StartColor:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_EndColor:
+      serializedVersion: 2
+      rgba: 4294967295
+  m_UseWorldSpace: 1
+--- !u!198 &19822770
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195206}
+  m_GameObject: {fileID: 155530}
   lengthInSec: 5
   startDelay: 0
   speed: 1
@@ -1199,12 +1292,12 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19934898
+--- !u!199 &19993952
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195206}
+  m_GameObject: {fileID: 155530}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
