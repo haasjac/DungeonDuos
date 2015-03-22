@@ -11,6 +11,8 @@ public class Menu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown("Submit")) {
+            GameObject.Find("Stinger").GetComponent<AudioSource>().Play();
+
 			Application.LoadLevel(Next_Level);
 		}
 	}
