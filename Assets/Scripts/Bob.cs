@@ -42,11 +42,14 @@ public class Bob : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (GetComponent<Rigidbody>().velocity != Vector3.zero)
-        {
-            vel = GetComponent<Rigidbody>().velocity;
-            transform.rotation = Quaternion.LookRotation(vel);
-        }
+        if (GetComponent<Rigidbody> ().velocity != Vector3.zero) {
+			vel = GetComponent<Rigidbody> ().velocity;
+			transform.rotation = Quaternion.LookRotation (vel);
+		}
+		else {
+			this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", false);
+			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Idle",0f);
+		}
 		if (Input.GetButton (Horizontal)) {
 			Debug.Log (Input.GetButton (Horizontal));
 		}
@@ -60,6 +63,8 @@ public class Bob : MonoBehaviour {
 			}
 
 		} else if (!Steve.GetComponent<Steve>().lantern && !swap){
+			this.gameObject.GetComponentInChildren<Animator>().SetBool("Run", true);
+			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Run",0f);
 			GetComponent<Rigidbody>().velocity =(new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)))* run_speed) + ramp_vec;
 		}
 
@@ -72,6 +77,7 @@ public class Bob : MonoBehaviour {
 		}
 
 		if (Input.GetButtonDown (B_button) && !jumping && (Input.GetAxis(Horizontal) != 0 || Input.GetAxis(Vertical) != 0)) {
+			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Leap",0f);
 			tempjump = new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)));
 			tempjump.Normalize();
 			jumping = true;
@@ -80,6 +86,7 @@ public class Bob : MonoBehaviour {
 			transform.position = pos;
 		}
 		if (Input.GetButtonDown (X_button)&& !jumping && !Steve.GetComponent<Steve>().lantern) {
+			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Swap",0f);
             StartCoroutine(particle());
 			swap = true;
 			bobpos = transform.position;
@@ -93,6 +100,7 @@ public class Bob : MonoBehaviour {
 		if (Input.GetButtonDown(A_button)) {
 			//Debug.Log("ATTACK");
             GameObject.Find("Swoosh" + Random.Range(1, 4)).GetComponent<AudioSource>().Play();
+			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Attack",0f);
 			foreach (GameObject item in enemies) {
                 Vector3 direction = item.transform.position - this.transform.position;
                 float distA = direction.magnitude;
