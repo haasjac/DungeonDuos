@@ -61,7 +61,7 @@ public class Steve : MonoBehaviour {
 			GetComponent<Rigidbody> ().velocity = (new Vector3 (Input.GetAxis (Horizontal) - Input.GetAxis (Vertical), 0, -(Input.GetAxis (Horizontal) + Input.GetAxis (Vertical))) * run_speed) + ramp_vec;
 
 			if (GetComponent<Rigidbody> ().velocity == Vector3.zero) {
-				this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", false);
+		//		this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", false);
 			}
 			else {this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", true);
 				//a.Stop("Idle");
