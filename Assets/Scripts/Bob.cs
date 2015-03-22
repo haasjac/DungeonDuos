@@ -156,7 +156,8 @@ public class Bob : MonoBehaviour {
 		}
 		if (collision.gameObject.tag == "Key"  && !has_key) {
 			has_key = true;
-			Destroy(collision.gameObject);
+			collision.gameObject.GetComponent<Key>().dead = true;
+			//Destroy(collision.gameObject);
 		}
 		
 	}
