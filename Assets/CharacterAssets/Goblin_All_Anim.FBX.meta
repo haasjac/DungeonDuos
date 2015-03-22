@@ -271,7 +271,7 @@ ModelImporter:
       name: Idle
       takeName: Take 001
       firstFrame: 46
-      lastFrame: 47
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -379,7 +379,7 @@ ModelImporter:
       name: Attack
       takeName: Take 001
       firstFrame: 102
-      lastFrame: 160
+      lastFrame: 130
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
