@@ -915,7 +915,7 @@ MonoBehaviour:
   run_speed: 15
   jump_time: .5
   jumping: 0
-  damage: 50
+  damage: 34
   damage_range: 10
   Steve: {fileID: 0}
   swap: 0

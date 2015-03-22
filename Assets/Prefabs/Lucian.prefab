@@ -963,7 +963,7 @@ MonoBehaviour:
   run_time: 1
   power_up_speed: 25
   Bob: {fileID: 0}
-  damage: 50
+  damage: 34
   damage_range: 10
   lantern: 0
 --- !u!114 &11463442
