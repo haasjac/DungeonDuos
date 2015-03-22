@@ -60,12 +60,12 @@ public class Steve : MonoBehaviour {
 			GetComponent<Rigidbody> ().velocity = (new Vector3 (Input.GetAxis (Horizontal) - Input.GetAxis (Vertical), 0, -(Input.GetAxis (Horizontal) + Input.GetAxis (Vertical))) * run_speed) + ramp_vec;
 			
 			if (GetComponent<Rigidbody> ().velocity == Vector3.zero) {
-<<<<<<< HEAD
+
 		//		this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", false);
-=======
+
 				this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", false);
 				
->>>>>>> 42a3363f5310fe953c255034662208bc011a30ef
+
 			}
 			else {
 				this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", true);
