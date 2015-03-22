@@ -89,7 +89,6 @@ public class Steve : MonoBehaviour {
 			run_speed -= power_up_speed;
 			this.gameObject.GetComponentInChildren<Animator>().SetBool("Dash", false);
 			this.gameObject.GetComponentInChildren<Animator>().SetBool("Attack",false);
-			this.gameObject.GetComponentInChildren<Animator>().SetBool("Lantern",false);
 		}
 		
 		
@@ -102,7 +101,6 @@ public class Steve : MonoBehaviour {
 			//Bob.GetComponent<BoxCollider>().enabled = true;
 			//float step = run_speed * Time.deltaTime;
 			lantern = true;
-			this.gameObject.GetComponentInChildren<Animator>().SetBool("Lantern",true);
 			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Lantern",0f);
 			//Bob.transform.position = Vector3.MoveTowards(Bob.transform.position, transform.position, step);
 			StartCoroutine(particle());
