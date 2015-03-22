@@ -648,8 +648,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171180}
-  m_LocalRotation: {x: 0, y: .382683456, z: 0, w: .923879504}
-  m_LocalPosition: {x: .00999999978, y: 4.78000021, z: .00999999978}
+  m_LocalRotation: {x: 0, y: .923879564, z: 0, w: .382683307}
+  m_LocalPosition: {x: .00999999978, y: 4, z: .00999999978}
   m_LocalScale: {x: .397427797, y: .289639354, z: .839489698}
   m_Children:
   - {fileID: 422506}
@@ -805,7 +805,7 @@ Transform:
   m_GameObject: {fileID: 146758}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
   m_LocalPosition: {x: 0, y: -.578299999, z: -.125331879}
-  m_LocalScale: {x: 8.50386524, y: 8.50387287, z: 8.50387287}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 461152}
   - {fileID: 493236}
@@ -1087,8 +1087,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195046}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 82.9000015, y: .5, z: 61.4000015}
+  m_LocalRotation: {x: 0, y: -.723718047, z: 0, w: .690095842}
+  m_LocalPosition: {x: 94.3799973, y: .5, z: 67.5299988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400422}
@@ -1290,6 +1290,7 @@ MonoBehaviour:
   cachedX: 0
   cachedY: 0
   cachedZ: 0
+  height: 5
   minXValue: 0
   minZValue: 0
   currentHealth: 0
@@ -1305,10 +1306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6032ea8f0fb9a82438a504c40304fa46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroDist: 20
+  aggroDist: 30
   destinationA: {fileID: 0}
   destinationB: {fileID: 0}
-  damage: 40
+  damage: 10
   player1: {fileID: 0}
   player2: {fileID: 0}
   hit: 0
@@ -1384,7 +1385,7 @@ NavMeshAgent:
   m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 150
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

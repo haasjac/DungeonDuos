@@ -10,6 +10,7 @@ public class enemyHealth : MonoBehaviour {
     public float cachedX;
     public float cachedY;
     public float cachedZ;
+	public float height;
 
     public float minXValue;
     public float minZValue;
@@ -18,7 +19,7 @@ public class enemyHealth : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        transform.position = new Vector3(0, 1 ,0) + back.position;
+        transform.position = new Vector3(0, 1 ,0)*height + back.position;
 
         cachedX = visual.transform.localScale.x;
         cachedY = visual.transform.localScale.y;
@@ -29,7 +30,7 @@ public class enemyHealth : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(0, 1, 0) + back.position;
+		transform.position = new Vector3(0, 1, 0)*height + back.position;
         healthBar();
     }
 
