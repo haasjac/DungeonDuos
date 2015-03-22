@@ -19,6 +19,7 @@ public class Steve : MonoBehaviour {
 	public bool lantern = false;
 	GameObject[] enemies;
 	float ystart;
+	Vector3 vel;
 
 	bool running = false;
 	float run_clock = 0;
@@ -27,6 +28,8 @@ public class Steve : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Vector3 vel = new Vector3 (1,0,1);
+		transform.rotation = Quaternion.LookRotation (vel);
 		ystart = transform.position.y;
 		Bob = GameObject.Find("Bob");
 		enemies = GameObject.FindGameObjectsWithTag("EnemyEnemy");
@@ -38,6 +41,10 @@ public class Steve : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (GetComponent<Rigidbody>().velocity != Vector3.zero) {
+			vel = GetComponent<Rigidbody>().velocity;
+			transform.rotation = Quaternion.LookRotation (vel);
+		}
         line.SetPosition(0, this.gameObject.transform.position);
         line.SetPosition(1, Bob.transform.position);
 		if (transform.position.y != ystart) {
