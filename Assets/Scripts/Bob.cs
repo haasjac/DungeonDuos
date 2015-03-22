@@ -164,7 +164,8 @@ public class Bob : MonoBehaviour {
 	void OnCollisionEnter(Collision collision) {
 		if (collision.gameObject.tag == "locked_door" && has_key) {
 			has_key = false;
-			Destroy(collision.gameObject);
+			collision.gameObject.GetComponent<Gate>().dead = true;
+			//Destroy(collision.gameObject);
 		}
 		
 	}
