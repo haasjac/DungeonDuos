@@ -20,6 +20,7 @@ public class Steve : MonoBehaviour {
 	public bool lantern = false;
 	GameObject[] enemies;
 	float ystart;
+	Vector3 vel;
 
 	bool running = false;
 	float run_clock = 0;
@@ -28,6 +29,8 @@ public class Steve : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		vel = new Vector3 (1,0,1);
+		transform.rotation = Quaternion.LookRotation (vel);
 		ystart = transform.position.y;
 		Bob = GameObject.Find("Bob");
 		enemies = GameObject.FindGameObjectsWithTag("EnemyEnemy");
@@ -39,6 +42,10 @@ public class Steve : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (GetComponent<Rigidbody>().velocity != Vector3.zero) {
+			vel = GetComponent<Rigidbody>().velocity;
+			transform.rotation = Quaternion.LookRotation (vel);
+		}
         line.SetPosition(0, this.gameObject.transform.position);
         line.SetPosition(1, Bob.transform.position);
 		if (transform.position.y != ystart) {
@@ -104,14 +111,22 @@ public class Steve : MonoBehaviour {
 		if (Input.GetButtonDown(A_button)) {
 			//Debug.Log("ATTACK");
             GameObject.Find("Swoosh" + Random.Range(1, 4)).GetComponent<AudioSource>().Play();
-			foreach (GameObject item in enemies) {
-				float distA = Vector3.Distance(item.transform.position, this.transform.position);
-				//Debug.Log(distA);
-				if (distA < damage_range) {
-					//Debug.Log(item);
-					item.GetComponent<enemyHealth>().changeHealth((-1 * damage));
-				}
-			}
+            foreach (GameObject item in enemies)
+            {
+                Vector3 direction = item.transform.position - this.transform.position;
+                float distA = direction.magnitude;
+                direction = direction / distA;
+                distA = Vector3.Distance(item.transform.position, this.transform.position);
+                    //Debug.Log(distA);
+                if (distA < damage_range)
+                {
+                    //Debug.Log(item);
+                    if (Mathf.Abs(Vector3.Angle(vel, direction)) <= 70)
+                    {
+                        item.GetComponent<enemyHealth>().changeHealth((-1 * damage));
+                    }
+                }
+           }
 		}
 	}
 
