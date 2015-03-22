@@ -44,11 +44,15 @@ public class Bob : MonoBehaviour {
 	void Update () {
         if (GetComponent<Rigidbody> ().velocity != Vector3.zero) {
 			vel = GetComponent<Rigidbody> ().velocity;
+			if(!jumping) {
+				this.gameObject.GetComponentInChildren<Animator>().SetBool("Run", true);
+				this.gameObject.GetComponentInChildren<Animator>().CrossFade("Run",0f);
+			}
 			transform.rotation = Quaternion.LookRotation (vel);
 		}
 		else {
-			this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", false);
-			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Idle",0f);
+			this.gameObject.GetComponentInChildren<Animator>().SetBool("Run", false);
+			//this.gameObject.GetComponentInChildren<Animator>().CrossFade("Idle",0f);
 		}
 		if (Input.GetButton (Horizontal)) {
 			Debug.Log (Input.GetButton (Horizontal));
@@ -63,8 +67,8 @@ public class Bob : MonoBehaviour {
 			}
 
 		} else if (!Steve.GetComponent<Steve>().lantern && !swap){
-			this.gameObject.GetComponentInChildren<Animator>().SetBool("Run", true);
-			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Run",0f);
+
+			//this.gameObject.GetComponentInChildren<Animator>().CrossFade("Run",0f);
 			GetComponent<Rigidbody>().velocity =(new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)))* run_speed) + ramp_vec;
 		}
 
@@ -101,6 +105,7 @@ public class Bob : MonoBehaviour {
 			//Debug.Log("ATTACK");
             GameObject.Find("Swoosh" + Random.Range(1, 4)).GetComponent<AudioSource>().Play();
 			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Attack",0f);
+			//print ("ATAK");
 			foreach (GameObject item in enemies) {
 				if (item != null) {
 	                Vector3 direction = item.transform.position - this.transform.position;

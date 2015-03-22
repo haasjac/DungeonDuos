@@ -325,7 +325,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Leap
       takeName: Take 001
-      firstFrame: 82
+      firstFrame: 100
       lastFrame: 120
       wrapMode: 0
       orientationOffsetY: 0
