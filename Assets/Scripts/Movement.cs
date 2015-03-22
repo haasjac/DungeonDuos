@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		Vector3 pos = new Vector3 ((bob.transform.position.x + steve.transform.position.x) / 2.0f, transform.position.y, (bob.transform.position.z + steve.transform.position.z) / 2.0f);  
-		pos += new Vector3 (1, 0, 1) * -10;
+		pos += new Vector3 (1, 0, 1) * 0;
 		transform.position = pos;
 		// Left
 		//if(Input.GetAxis(Horizontal) < 0)

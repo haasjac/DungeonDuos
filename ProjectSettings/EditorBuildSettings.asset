@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/__Scenes/Main__menu.unity
   - enabled: 1
-    path: Assets/__Scenes/Tutorial_Level.unity
-  - enabled: 1
     path: Assets/__Scenes/Level_2.unity
+  - enabled: 1
+    path: Assets/__Scenes/Tutorial_Level.unity
   - enabled: 1
     path: Assets/__Scenes/win_screen.unity
   - enabled: 1
