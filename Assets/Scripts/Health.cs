@@ -10,7 +10,6 @@ public class Health : MonoBehaviour {
     public float maxXValue;
     public int currentHealth;
     public int maxHealth;
-    public Text healthtext;
     public Image visualHealth;
     float heartcount;
     GameObject heart;
@@ -68,7 +67,7 @@ public class Health : MonoBehaviour {
         if (currentHealth < 0) {
             currentHealth = 0;
         }
-        healthtext.text = "Health: " + currentHealth;
+
         float currentXValue = mapValues(currentHealth, maxHealth, minXValue, maxXValue);
 		//print (currentXValue);
         healthTransform.position = new Vector3(currentXValue, cachedY);
