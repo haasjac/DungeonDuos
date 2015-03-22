@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Steve : MonoBehaviour {
 
+	//public Animation a;
 	public string Horizontal = "L_XAxis_1";
 	public string Vertical = "L_YAxis_1";
 	public string A_button = "A_1";
@@ -45,12 +46,26 @@ public class Steve : MonoBehaviour {
 			temp.y = ystart;
 			transform.position = temp;
 		}
+
+
+
+
 		if (!lantern && !Bob.GetComponent<Bob>().swap) {
 			GetComponent<Rigidbody> ().velocity = (new Vector3 (Input.GetAxis (Horizontal) - Input.GetAxis (Vertical), 0, -(Input.GetAxis (Horizontal) + Input.GetAxis (Vertical))) * run_speed) + ramp_vec;
-		} else if (lantern) {
+
+			if (GetComponent<Rigidbody> ().velocity == Vector3.zero) {
+				this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", false);
+			}
+			else {this.gameObject.GetComponentInChildren<Animator>().SetBool("Running", true);
+				//a.Stop("Idle");
+				}
+		} 
+		else if (lantern) {
 			GetComponent<Rigidbody>().velocity = Vector3.zero;
 		}
+		//dash
 		if (Input.GetButtonDown (B_button) && !running) {
+			this.gameObject.GetComponentInChildren<Animator>().SetBool("Dash", true);
             gameObject.GetComponent<TrailRenderer>().enabled = true;
             GameObject.Find("Dash" + Random.Range(1, 3)).GetComponent<AudioSource>().Play();
 			running = true;
@@ -63,7 +78,13 @@ public class Steve : MonoBehaviour {
             gameObject.GetComponent<TrailRenderer>().enabled = false;
 			running = false;
 			run_speed -= power_up_speed;
+			this.gameObject.GetComponentInChildren<Animator>().SetBool("Dash", false);
 		}
+
+
+
+
+
 		if (Input.GetButtonDown (X_button) && !Bob.GetComponent<Bob>().jumping && !Bob.GetComponent<Bob>().swap) {
 			//Bob.GetComponent<BoxCollider>().enabled = false;
 			//Bob.transform.Translate(transform.position * (Time.deltaTime));
