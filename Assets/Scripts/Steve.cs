@@ -23,15 +23,23 @@ public class Steve : MonoBehaviour {
 	bool running = false;
 	float run_clock = 0;
 
+    LineRenderer line;
+
 	// Use this for initialization
 	void Start () {
 		ystart = transform.position.y;
 		Bob = GameObject.Find("Bob");
 		enemies = GameObject.FindGameObjectsWithTag("EnemyEnemy");
+
+        line = GetComponent<LineRenderer>();
+        line.SetPosition(0, this.gameObject.transform.position);
+        line.SetPosition(1, Bob.transform.position);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        line.SetPosition(0, this.gameObject.transform.position);
+        line.SetPosition(1, Bob.transform.position);
 		if (transform.position.y != ystart) {
 			Vector3 temp = transform.position;
 			temp.y = ystart;
@@ -44,6 +52,7 @@ public class Steve : MonoBehaviour {
 		}
 		if (Input.GetButtonDown (B_button) && !running) {
             gameObject.GetComponent<TrailRenderer>().enabled = true;
+            GameObject.Find("Dash" + Random.Range(1, 3)).GetComponent<AudioSource>().Play();
 			running = true;
 			run_clock = 0;
 			run_speed += power_up_speed;
@@ -62,6 +71,7 @@ public class Steve : MonoBehaviour {
 			//float step = run_speed * Time.deltaTime;
 			lantern = true;
 			//Bob.transform.position = Vector3.MoveTowards(Bob.transform.position, transform.position, step);
+            StartCoroutine(particle());
 		}
 		if (lantern) {
 			float step = run_speed * 5 * Time.deltaTime;
@@ -84,6 +94,14 @@ public class Steve : MonoBehaviour {
 		}
 	}
 
+    IEnumerator particle()
+    {
+        GameObject.Find("Slide").GetComponent<AudioSource>().Play();
+        GetComponent<LineRenderer>().enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<LineRenderer>().enabled = false;
+
+    }
 
 	void OnTriggerEnter(Collider collision) {
 		//Debug.Log ("hit");
