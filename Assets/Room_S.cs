@@ -7,10 +7,10 @@ public class Room_S : MonoBehaviour {
 	public Material Trans;
 	public Material Opaque;
 
-	public GameObject Torch1;
-	public GameObject Torch2;
-	public GameObject Torch3;
-	public GameObject Torch4;
+	//public GameObject Torch1;
+	//public GameObject Torch2;
+	//public GameObject Torch3;
+	//ublic GameObject Torch4;
 
 	void OnTriggerStay (Collider other)
 	{
