@@ -321,67 +321,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 45, y: 20, z: 45}
   m_Center: {x: 80.5999985, y: 0, z: 25.9099998}
---- !u!1 &116984717
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 116984718}
-  - 222: {fileID: 116984720}
-  - 114: {fileID: 116984719}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &116984718
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 116984717}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1211534376}
-  m_RootOrder: 3
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &116984719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 116984717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &116984720
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 116984717}
 --- !u!1001 &157308907
 Prefab:
   m_ObjectHideFlags: 0
@@ -817,7 +756,6 @@ MonoBehaviour:
   maxXValue: 0
   currentHealth: 0
   maxHealth: 100
-  healthtext: {fileID: 0}
   visualHealth: {fileID: 38510887}
 --- !u!114 &351360944
 MonoBehaviour:
@@ -3015,7 +2953,6 @@ MonoBehaviour:
   maxXValue: 0
   currentHealth: 0
   maxHealth: 100
-  healthtext: {fileID: 0}
   visualHealth: {fileID: 1606015159}
 --- !u!114 &1144072917
 MonoBehaviour:
@@ -3207,7 +3144,6 @@ RectTransform:
   - {fileID: 351360941}
   - {fileID: 1144072914}
   - {fileID: 416735875}
-  - {fileID: 116984718}
   m_Father: {fileID: 0}
   m_RootOrder: 41
   m_AnchorMin: {x: 0, y: 0}
