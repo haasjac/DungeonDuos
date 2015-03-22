@@ -2025,7 +2025,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: 0}
   m_AnchorMax: {x: .5, y: 0}
   m_AnchoredPosition: {x: 0, y: 15}
-  m_SizeDelta: {x: 500, y: 50}
+  m_SizeDelta: {x: 550, y: 50}
   m_Pivot: {x: .5, y: 0}
 --- !u!114 &416735876
 MonoBehaviour:
@@ -2792,7 +2792,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479494, guid: 33a3f061114f85a478b7a9436eeb25e3, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 11461400, guid: 33a3f061114f85a478b7a9436eeb25e3, type: 2}
       propertyPath: Bob
@@ -3124,7 +3124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479494, guid: 32ca65a9d4c3b9b4987b73aec0dc134c, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 11401460, guid: 32ca65a9d4c3b9b4987b73aec0dc134c, type: 2}
       propertyPath: Steve
@@ -3136,7 +3136,7 @@ Prefab:
       objectReference: {fileID: 1195732315}
     - target: {fileID: 11401460, guid: 32ca65a9d4c3b9b4987b73aec0dc134c, type: 2}
       propertyPath: attack_cd
-      value: .75
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32ca65a9d4c3b9b4987b73aec0dc134c, type: 2}
@@ -5332,7 +5332,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 50}
+  m_SizeDelta: {x: 550, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1375579081
 MonoBehaviour:
@@ -6652,6 +6652,7 @@ GameObject:
   - 4: {fileID: 1939233148}
   - 65: {fileID: 1939233150}
   - 114: {fileID: 1939233149}
+  - 114: {fileID: 1939233151}
   m_Layer: 0
   m_Name: Room7
   m_TagString: Untagged
@@ -6700,6 +6701,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 45, y: 20, z: 45}
   m_Center: {x: 80.9300003, y: 0, z: -75.8399963}
+--- !u!114 &1939233151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1939233147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb74a96ef47b97a4bbec94066cbc447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Room: 4
 --- !u!1001 &1950704826
 Prefab:
   m_ObjectHideFlags: 0
@@ -7147,7 +7160,7 @@ Transform:
   - {fileID: 795317772}
   - {fileID: 309999184}
   m_Father: {fileID: 0}
-  m_RootOrder: 72
+  m_RootOrder: 73
 --- !u!1 &2058315776
 GameObject:
   m_PrefabParentObject: {fileID: 138388, guid: 33a3f061114f85a478b7a9436eeb25e3, type: 2}

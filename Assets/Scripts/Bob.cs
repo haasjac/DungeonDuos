@@ -111,7 +111,7 @@ public class Bob : MonoBehaviour {
 			attack_clock += Time.deltaTime;
 		}
 
-		if (Input.GetButtonDown(A_button)) {
+		if (Input.GetButtonDown(A_button) && attack) {
 			//Debug.Log("ATTACK");
 			attack = false;
 			attack_clock = 0;

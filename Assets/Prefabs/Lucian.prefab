@@ -966,6 +966,7 @@ MonoBehaviour:
   damage: 34
   damage_range: 10
   lantern: 0
+  attack_cd: .5
 --- !u!114 &11463442
 MonoBehaviour:
   m_ObjectHideFlags: 1

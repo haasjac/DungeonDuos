@@ -21,11 +21,11 @@ public class Health : MonoBehaviour {
         cachedY = healthTransform.position.y;
         if (player == 2) {
             maxXValue = healthTransform.position.x;
-            minXValue = healthTransform.position.x + healthTransform.rect.width*2;
+            minXValue = healthTransform.position.x + healthTransform.rect.width*1.8f;
         }
         else {
             maxXValue = healthTransform.position.x;
-            minXValue = healthTransform.position.x - healthTransform.rect.width*2;
+            minXValue = healthTransform.position.x - healthTransform.rect.width*1.8f;
         }
         currentHealth = maxHealth;
 	}
@@ -49,9 +49,13 @@ public class Health : MonoBehaviour {
 
 		if (currentHealth <= 0) {
 			Time.timeScale = 0;
+			GameObject.Find("Lucian").GetComponent<Steve>().enabled = false;
+			GameObject.Find("Bob").GetComponent<Bob>().enabled = false;
 			if (Input.GetButtonDown("Submit")) {
 				Application.LoadLevel(Application.loadedLevel);
 				Time.timeScale = 1;
+				GameObject.Find("Lucian").GetComponent<Steve>().enabled = true;
+				GameObject.Find("Bob").GetComponent<Bob>().enabled = true;
 			}
 		}
         healthBar();

@@ -919,6 +919,7 @@ MonoBehaviour:
   damage_range: 10
   Steve: {fileID: 0}
   swap: 0
+  attack_cd: .5
   sParticles: {fileID: 0}
   bParticles: {fileID: 195206}
 --- !u!137 &13742072

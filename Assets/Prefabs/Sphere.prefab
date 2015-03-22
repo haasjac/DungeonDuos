@@ -27,11 +27,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 451768}
   - 33: {fileID: 3328116}
-  - 135: {fileID: 13596482}
   - 23: {fileID: 2363940}
   - 114: {fileID: 11413668}
   - 114: {fileID: 11456456}
   - 114: {fileID: 11406756}
+  - 65: {fileID: 6566308}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Goal
@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0999999, y: -2, z: 13.8000002}
+  m_LocalPosition: {x: 86.1999969, y: -2, z: -41.7999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 411518}
@@ -126,6 +126,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159782}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &6566308
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159782}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9548450
 Animator:
   serializedVersion: 3
@@ -181,18 +193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: .75
   distance: .5
---- !u!135 &13596482
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159782}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

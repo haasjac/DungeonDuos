@@ -24,9 +24,11 @@ public class Sign : MonoBehaviour {
 			} else if (Room == 1) {
 				canvas.GetComponent<Dialouge_script>().mytext.text = "Player 1 Press X to Pull Player 2 to you\nPlayer 2 Press X to Swap places";
 			} else if (Room == 2) {
-				canvas.GetComponent<Dialouge_script>().mytext.text = "Lookout! That guy will hurt you!\nPress A to Attack";
+				canvas.GetComponent<Dialouge_script>().mytext.text = "Monsters will hunt you down!\nPress A to Attack";
 			} else if (Room == 3) {
-				canvas.GetComponent<Dialouge_script>().mytext.text = "That key will let you open unlocked doors";
+				canvas.GetComponent<Dialouge_script>().mytext.text = "Use keys to open doors and search for gold!";
+			} else if (Room == 4) {
+				canvas.GetComponent<Dialouge_script>().mytext.text = "Use maps to explore new parts of the dungeon!";
 			}
 			//if (Input.GetButtonDown("A_1")) {
 				//Time.timeScale = 1;
