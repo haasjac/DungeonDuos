@@ -23,7 +23,10 @@ public class Steve : MonoBehaviour {
 	public float attack_cd = 1f;
 	float attack_clock = 0;
 	bool attack = true;
-	
+	public bool a_bool;
+	public bool b_bool;
+	public bool x_bool;
+
 	bool running = false;
 	float run_clock = 0;
 	
@@ -31,6 +34,15 @@ public class Steve : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		if (Application.loadedLevel == 2) {
+			a_bool = false;
+			b_bool = false;
+			x_bool = false;
+		} else {
+			a_bool = true;
+			b_bool = true;
+			x_bool = true;
+		}
 		attack_clock = attack_cd;
 		vel = new Vector3 (1,0,1);
 		transform.rotation = Quaternion.LookRotation (vel);
@@ -81,7 +93,7 @@ public class Steve : MonoBehaviour {
 			GetComponent<Rigidbody>().velocity = Vector3.zero;
 		}
 		//dash
-		if (Input.GetButtonDown (B_button) && !running) {
+		if (Input.GetButtonDown (B_button) && b_bool && !running) {
 			this.gameObject.GetComponentInChildren<Animator>().SetBool("Dash", true);
 			gameObject.GetComponent<TrailRenderer>().enabled = true;
 			GameObject.Find("Dash" + Random.Range(1, 3)).GetComponent<AudioSource>().Play();
@@ -103,7 +115,7 @@ public class Steve : MonoBehaviour {
 		
 		
 		
-		if (Input.GetButtonDown (X_button) && !Bob.GetComponent<Bob>().jumping && !Bob.GetComponent<Bob>().swap) {
+		if (Input.GetButtonDown (X_button) && x_bool && !Bob.GetComponent<Bob>().jumping && !Bob.GetComponent<Bob>().swap) {
 			//Bob.GetComponent<BoxCollider>().enabled = false;
 			//Bob.transform.Translate(transform.position * (Time.deltaTime));
 			//Bob.GetComponent<BoxCollider>().enabled = true;
@@ -129,7 +141,7 @@ public class Steve : MonoBehaviour {
 		} else {
 			attack_clock += Time.deltaTime;
 		}
-		if (Input.GetButtonDown(A_button) && attack) {
+		if (Input.GetButtonDown(A_button) && a_bool && attack) {
 			//Debug.Log("ATTACK");
 			attack = false;
 			attack_clock = 0;

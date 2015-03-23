@@ -29,6 +29,9 @@ public class Bob : MonoBehaviour {
 	public float attack_cd = 1f;
 	float attack_clock = 0;
 	bool attack = true;
+	public bool a_bool;
+	public bool b_bool;
+	public bool x_bool;
 
     public GameObject sParticles;
     public GameObject bParticles;
@@ -36,6 +39,15 @@ public class Bob : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (Application.loadedLevel == 2) {
+			a_bool = false;
+			b_bool = false;
+			x_bool = false;
+		} else {
+			a_bool = true;
+			b_bool = true;
+			x_bool = true;
+		}
 		attack_clock = attack_cd;
         vel = new Vector3(1, 0, 1);
         transform.rotation = Quaternion.LookRotation(vel);
@@ -57,9 +69,6 @@ public class Bob : MonoBehaviour {
 		else {
 			this.gameObject.GetComponentInChildren<Animator>().SetBool("Run", false);
 			//this.gameObject.GetComponentInChildren<Animator>().CrossFade("Idle",0f);
-		}
-		if (Input.GetButton (Horizontal)) {
-			Debug.Log (Input.GetButton (Horizontal));
 		}
 		if (jumping) {
 			GetComponent<Rigidbody> ().velocity = (tempjump * leap_force) + ramp_vec;
@@ -84,7 +93,7 @@ public class Bob : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetButtonDown (B_button) && !jumping && (Input.GetAxis(Horizontal) != 0 || Input.GetAxis(Vertical) != 0)) {
+		if (Input.GetButtonDown (B_button) && b_bool && !jumping && (Input.GetAxis(Horizontal) != 0 || Input.GetAxis(Vertical) != 0)) {
 			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Leap",0f);
 			tempjump = new Vector3 (Input.GetAxis(Horizontal) - Input.GetAxis(Vertical), 0, -(Input.GetAxis(Horizontal) + Input.GetAxis(Vertical)));
 			tempjump.Normalize();
@@ -93,7 +102,7 @@ public class Bob : MonoBehaviour {
 			Vector3 pos = transform.position + new Vector3 (0, 2, 0);
 			transform.position = pos;
 		}
-		if (Input.GetButtonDown (X_button)&& !jumping && !Steve.GetComponent<Steve>().lantern) {
+		if (Input.GetButtonDown (X_button) && x_bool && !jumping && !Steve.GetComponent<Steve>().lantern) {
 			this.gameObject.GetComponentInChildren<Animator>().CrossFade("Swap",0f);
             StartCoroutine(particle());
 			swap = true;
@@ -111,7 +120,7 @@ public class Bob : MonoBehaviour {
 			attack_clock += Time.deltaTime;
 		}
 
-		if (Input.GetButtonDown(A_button) && attack) {
+		if (Input.GetButtonDown(A_button) && a_bool && attack) {
 			//Debug.Log("ATTACK");
 			attack = false;
 			attack_clock = 0;
